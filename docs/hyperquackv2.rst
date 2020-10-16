@@ -13,7 +13,7 @@ used for remote censorship detection, you can read the following papers:
 Trial Outputs
 *************
 
-Trial outputs are produced when the system attempts to measure whether or not
+Trial outputs are produced when HyperquackV2 attempts to measure whether or not
 a vantage point observes the blocking of a given keyword by sending one or more
 probes to a vantage point.
 
@@ -23,7 +23,7 @@ Fields
 * :code:`Ip` : String
     The Ip address of the vantage point used in this trial.
 * :code:`Location`
-    The location of the aforementioned vantage point. This field has two
+    The location of the vantage point. This field has two
     subfields:
     
     * :code:`country_name` : String
@@ -48,7 +48,7 @@ Fields
         and :code:`false` otherwise.
     * :code:`response` : HTTP Response
         If the response given by the vantage point does not match the template,
-        the system will add this field. Describes the response sent by the
+        HyperquackV2 will add this field. Describes the response sent by the
         vantage point, including HTTP headers, the HTTP response code, and the
         body of the response.
     * :code:`error` : Error
@@ -56,7 +56,7 @@ Fields
         censorship. If this occurs, this field will be included. Describes the
         encountered error.
     * :code:`control_keyword` : String
-        During a trial, the system will sometimes send probes with
+        During a trial, HyperquackV2 will sometimes send probes with
         non-sensitive keywords if all probes with sensitive keywords show
         evidence of being censored. If the probe described by this entry in the
         results array is a control probe, this field will be included. Contains
@@ -87,5 +87,41 @@ Fields
 Evaluation Outputs
 ******************
 
-Evaluation outputs are produced when the system performs a health evaluation of
-a vantage point by sending one or more control probes to that vantage point.
+Evaluation outputs are produced when the HyperquackV2 performs a health
+evaluation of a vantage point's service. Services are evaluated by sending one
+or more probes containing control keyoword to the vantage point.
+
+* :code:`Ip` : String
+    The IP of the vantage point being evaluated.
+* :code:`Service` : TODO
+* :code:`Tests`
+    An array representing each probe sent to the vantage point. Each entry has
+    five subfields:
+
+    * :code:`Keyword` : String
+        The control keyword used for this probe.
+    * :code:`Response` : HTTP Response
+        The response sent by the vantage point, including HTTP headers, the
+        HTTP response code, and the body of the response. If no response was
+        sent, this field is set to null.
+    * :code:`error` : Error
+        If the probe fails with an error this field will describe the
+        encountered error. If no error is encountered, this field is set
+        to null.
+    * :code:`start_time` : Timestamp
+        The time when the probe was sent.
+    * :code:`end_time` : Timestamp
+        The time when the reponse to the probe finished arriving.
+
+* :code:`Template` : HTTP Response
+    Represents the expected response from the vantage point when sent a probe
+    containing an uncensored keyword. If the service being tested is HTTP or 
+    HTTPS, this field is an HTTP response, including HTTP headers, the HTTP
+    response code, and the body of the response. If the service is Echo or
+    Discard, this field is set to null. This template is gereated by the first
+    probe during the health evaluation. If there is an error in generating the
+    template, this field is set to null.
+* :code:`Error` : Error
+    Describes any error encountered when generating the template or when
+    comparing subsequent control probes to the template. If no error occured,
+    this field is set to null.
