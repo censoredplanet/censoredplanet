@@ -1,8 +1,8 @@
 ############
 HyperquackV2
 ############
-HyperquackV2 combines the older Quack and Hyperquack techniques.
-It makes use of the Echo, Discard, HTTP, and HTTPS internet protocols to remotely
+HyperquackV2 combines the older Quack and Hyperquack techniques,
+making use of the Echo, Discard, HTTP, and HTTPS internet protocols to remotely
 detect censorship. For a full description of how each of these protocols are
 used for remote censorship detection, you can read the following papers:
 
@@ -20,9 +20,9 @@ probes to a vantage point.
 Fields
 ======
 
-* :code:`Ip` : String
-    The Ip address of the vantage point used in this trial.
-* :code:`Location`
+* :code:`vp` : String
+    The IP address of the vantage point used in this trial.
+* :code:`location`
     The location of the vantage point. This field has two
     subfields:
     
@@ -32,12 +32,17 @@ Fields
     * :code:`country_code` : String
         The two letter code associated with the aforementioned country.
 
-* :code:`Service` : TODO
-* :code:`Keyword` : String
-    The keyword being tested by this trial.
-* :code:`Results`
+* :code:`service` : String
+    The service of the vantage point we are using for this trial.
+    This field is set to the name of the service. 
+    If the service is running on a non-standard port,
+    a colon and the port number are appended
+    (i.e., *discard* for discard on port 9, or *echo:8080* for echo on port 8080).
+* :code:`test_url` : String
+    The URL being tested by this trial.
+* :code:`trials`
     An array representing the results of each probe sent to the vantage point.
-    Each entry has six subfields:
+    Each entry is a JSON object with six subfields:
 
     * :code:`matches_template` : Boolean
         Each trial performed by HyperquackV2 determines whether or not the
@@ -46,34 +51,35 @@ Fields
         match, that is potentially evidence of censorship. Set to :code:`true`
         if the response given by the vantage point matches the known template,
         and :code:`false` otherwise.
-    * :code:`response` : HTTP Response
+    * :code:`response` : JSON Object
         If the response given by the vantage point does not match the template,
         HyperquackV2 will add this field. Describes the response sent by the
         vantage point, including HTTP headers, the HTTP response code, and the
         body of the response.
-    * :code:`error` : Error
+    * :code:`error` : String
         If the probe fails with an error, that is potential evidence of
         censorship. If this occurs, this field will be included. Describes the
         encountered error.
-    * :code:`control_keyword` : String
+    * :code:`control_url` : String
         During a trial, HyperquackV2 will sometimes send probes with
-        non-sensitive keywords if all probes with sensitive keywords show
+        non-sensitive URLs if all probes with sensitive URLs show
         evidence of being censored. If the probe described by this entry in the
         results array is a control probe, this field will be included. Contains
-        the control keyword used in the probe.
+        the control URL used in the probe.
     * :code:`start_time` : Timestamp
-        The time when the probe was sent.
+        Th1e time when the probe was sent.
     * :code:`end_time` : Timestamp
         The time when the reponse to the probe finished arriving.
 
-* :code:`Blocked` : Boolean
+* :code:`snomaly` : Boolean
     Indicates whether the probes to the vantage point show enough evidence to
-    conclude that the vantage point observes blocking of this keyword.
-* :code:`ControlsFailed` : Boolean
+    conclude that the vantage point has observed some sort of anomaly, potentially
+    indicative of blocking.
+* :code:`controls_failed` : Boolean
     Set to :code:`true` when all control probes sent to the vantage point fail to
     match the known template. This implies that the mismatching responses are
     due to an error in the vantage point or the network, not censorship.
-* :code:`StatefulBlock` : Boolean
+* :code:`stateful_block` : Boolean
     Certain methods of censorship will block all communication from a given IP
     address for a length of time after that IP sends a request containing a
     censored keyword. We call this type of censorship ‘Stateful Blocking’. We
@@ -94,37 +100,41 @@ or more probes containing control keyoword to the vantage point.
 Fields
 ======
 
-* :code:`Ip` : String
-    The IP of the vantage point being evaluated.
-* :code:`Service` : TODO
-* :code:`Tests`
-    An array representing each probe sent to the vantage point. Each entry has
-    five subfields:
+* :code:`vp` : String
+    The IP address of the vantage point being evaluated..
+* :code:`service` : String
+    The service of the vantage point that is being evaluated. This field is set
+    to the name of the service. If the service is running on a non-standard
+    port, a colon and the port number are appended
+    (i.e., *discard* for discard on port 9, or *echo:8080* for echo on port 8080).
+* :code:`tests`
+    An array representing each probe sent to the vantage point.
+    Each entry is a JSON object with five subfields:
 
-    * :code:`Keyword` : String
-        The control keyword used for this probe.
-    * :code:`Response` : HTTP Response
-        The response sent by the vantage point, including HTTP headers, the
-        HTTP response code, and the body of the response. If no response was
-        sent, this field is set to null.
-    * :code:`error` : Error
-        If the probe fails with an error this field will describe the
-        encountered error. If no error is encountered, this field is set
-        to null.
+    * :code:`test_url` : String
+        The control URL used for this probe.
+    * :code:`response` : JSON Object
+        If the vantage point responds to the probe, this field is added.
+        Describes the response sent by the vantage point, including the HTTP
+        headers, the HTTP response code, and the body of the response.
+    * :code:`error` : String
+        If the probe fails with an error this field is included. Describes the
+        encountered error.
     * :code:`start_time` : Timestamp
         The time when the probe was sent.
     * :code:`end_time` : Timestamp
         The time when the reponse to the probe finished arriving.
 
-* :code:`Template` : HTTP Response
+* :code:`template` : JSON Object
+    If HyperquackV2 is able to generate a template from the probes, this field
+    is included.
     Represents the expected response from the vantage point when sent a probe
     containing an uncensored keyword. If the service being tested is HTTP or 
     HTTPS, this field is an HTTP response, including HTTP headers, the HTTP
     response code, and the body of the response. If the service is Echo or
-    Discard, this field is set to null. This template is gereated by the first
-    probe during the health evaluation. If there is an error in generating the
-    template, this field is set to null.
-* :code:`Error` : Error
-    Describes any error encountered when generating the template or when
-    comparing subsequent control probes to the template. If no error occured,
-    this field is set to null.
+    Discard, this field is omitted. This template is gereated by the first
+    probe during the health evaluation.
+* :code:`issue` : String
+    If there was an issue in generating the template for this service, this
+    field will be included. Describes the issue encountered when generating the
+    template or when comparing subsequent control probes to the template.
