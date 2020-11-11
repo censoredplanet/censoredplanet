@@ -32,6 +32,10 @@ The detect module has two output files: :code:`interference.json` and :code:`int
     The resolver's returned answer IPs for the queried domain are the keys. Each answer IP is mapped to an array of its tags that matched the control tags - if the IP is in the control set, "ip" is appended and if the IP has no tags, "no_tags" is appended.
 * :code:`passed` : Boolean
     Equals true if interference is not detected.
+* :code:`startTime` : String
+    The start time of the measurement.
+* :code:`endTime` : String
+    The end time of the measurement
 * :code:`confidence` : JSON object
     * :code:`average` : Float
         Average percentage of tags matching the control set for the answers (average of :code:`matches`).
