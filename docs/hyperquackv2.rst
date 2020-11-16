@@ -40,7 +40,7 @@ Fields
     (i.e., *discard* for discard on port 9, or *echo:8080* for echo on port 8080).
 * :code:`test_url` : String
     The URL being tested by this trial.
-* :code:`trials`
+* :code:`response`
     An array representing the results of each probe sent to the vantage point.
     Each entry is a JSON object with six subfields:
 
@@ -71,7 +71,7 @@ Fields
     * :code:`end_time` : Timestamp
         The time when the reponse to the probe finished arriving.
 
-* :code:`snomaly` : Boolean
+* :code:`anomaly` : Boolean
     Indicates whether the probes to the vantage point show enough evidence to
     conclude that the vantage point has observed some sort of anomaly, potentially
     indicative of blocking.
@@ -107,8 +107,8 @@ Fields
     to the name of the service. If the service is running on a non-standard
     port, a colon and the port number are appended
     (i.e., *discard* for discard on port 9, or *echo:8080* for echo on port 8080).
-* :code:`tests`
-    An array representing each probe sent to the vantage point.
+* :code:`response`
+    An array representing the results of each probe sent to the vantage point.
     Each entry is a JSON object with five subfields:
 
     * :code:`test_url` : String
