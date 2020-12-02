@@ -16,6 +16,7 @@ Contents
    
     hyperquackv2
     satellite
+    satellitev1
 
 ******************
 Indices and tables
