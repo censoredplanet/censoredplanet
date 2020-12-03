@@ -46,15 +46,52 @@ The published data has the following directory structure: ::
 Output
 *******
 
+------
+Probe
+------
+
+:code:`resolvers_raw.json`
+
+* :code:`saddr` : String
+	IP address of a DNS resolver.
+* :code:`data`: String
+	Raw response to probe domain.
+
+------
+Filter
+------
+
 :code:`resolvers_err.json`
+
+* :code:`resolver` : String
+    IP address of a DNS resolver.
+* :code:`error` : JSON Object
+	Contains error information.
 
 :code:`resolvers_ip.json`
 
+* :code:`resolver` : String
+    IP address of a DNS resolver.
+* :code:`answer` : String
+	The resolver's response (IP address) to the probe domain.
+
 :code:`resolvers.json`
+
+* :code:`resolver` : String
+    IP address of a DNS resolver.
+* :code:`name` : String
+	Result from PTR query.
 
 :code:`resolvers_ptr.json`
 
-:code:`resolvers_raw.json`
+* :code:`resolver` : String
+    IP address of a DNS resolver.
+* :code:`names` : Array
+    Result from PTR query.
+
+------
+Query
+------
 
 :code:`answers_control.json`
 
@@ -97,6 +134,10 @@ Output
 * :code:`data` : String
     Raw query response.
 
+------
+Tag
+------
+
 :code:`tagged_answers.json`
 
 * :code:`ip` : String
@@ -116,6 +157,10 @@ Output
 	The IP address of the vantage point (a DNS resolver).
 * :code:`country` : String
 	The full name of the country where the resolver is located.
+
+------
+Detect
+------
 
 :code:`interference_err.json` contains resolver answers for queries with no control response, with the following fields:
 
