@@ -208,24 +208,61 @@ Detect
 Stat
 -----
 
-:code:`stat_answers.json`
+:code:`stat_resolvers.json` computes stats for Filter.
+	
+	* :code:`resolvers_final` : Integer
 
-:code:`stat_interference_agg.json`
+	* :code:`resolvers_ip_filtered` : Integer
 
-:code:`stat_interference_count.json`
+	* :code:`resolvers_ptr_filtered` : Integer
 
-:code:`stat_interference_country_domain.json`
+	* :code:`resolvers_raw` : Integer
 
-:code:`stat_interference_country.json`
+:code:`stat_answers.json` computes stats for Query.
 
-:code:`stat_interference_country_percentage.json`
+	* :code:`control_answers_actual` : Integer
 
-:code:`stat_interference_err.json`
+	* :code:`control_answers_expected` : Integer
 
-:code:`stat_interference.json`
+	* :code:`errors` : Integer
 
-:code:`stat_resolvers_country.json`
+	* :code:`resolver_answers_actual` : Integer
 
-:code:`stat_resolvers.json`
+	* :code:`resolver_answers_expected` : Integer
 
-:code:`stat_tagged.json`
+	* :code:`total_answers_actual` : Integer
+
+	* :code:`total_answers_expected` : Integer
+
+	* :code:`unique_ips` : Integer
+
+:code:`stat_tagged.json` computes stats for Tag.
+
+	* :code:`answers_tagged_actual` : Integer
+
+	* :code:`answers_tagged_expected` : Integer
+
+	* :code:`resolvers_tagged_actual` : Integer
+
+	* :code:`resolvers_tagged_expected` : Integer
+
+:code:`stat_interference_agg.json` computes stats for Detect.
+
+	* :code:`answers_failed` : Integer
+
+	* :code:`answers_passed` : Integer
+
+:code:`stat_interference_count.json` maps each resolver to the total counts of domains with and without interference.
+
+:code:`stat_interference_country_domain.json` maps each country and queried domain to the proportion of interference.
+
+:code:`stat_interference_country.json` maps each country and queried domain to the proportion of interference.
+
+:code:`stat_interference_country_percentage.json` maps each country to the percentages of domains with and without interference.
+
+:code:`stat_interference_err.json` maps domains to the number of unknown responses.
+
+:code:`stat_interference.json` maps each resolver IP to lists of its domains with and without interference.
+
+:code:`stat_resolvers_country.json` maps each country to the number of resolvers in that country.
+
