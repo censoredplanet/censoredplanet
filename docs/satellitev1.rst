@@ -50,134 +50,182 @@ Output
 Probe
 ------
 
-:code:`resolvers_raw.json`
+1. Generate a DNS A query packet for a controlled domain (`dns.pkt`).
 
-* :code:`saddr` : String
-	IP address of a DNS resolver.
-* :code:`data`: String
-	Raw response to probe domain.
+2. Perform a ZMap scan with the probe packet for open DNS resolvers.
+
+	:code:`resolvers_raw.json` contains the ZMap output:
+
+	* :code:`saddr` : String
+		IP address of a DNS resolver.
+	* :code:`data` : String
+		Raw response to probe domain.
 
 ------
 Filter
 ------
 
-:code:`resolvers_err.json`
+1. Check the probe responses of the resolvers found by ZMap. 
 
-* :code:`resolver` : String
-    IP address of a DNS resolver.
-* :code:`error` : JSON Object
-	Contains error information.
+	:code:`resolvers_ip.json` contains resolvers that returned the correct probe response:
 
-:code:`resolvers_ip.json`
+	* :code:`resolver` : String
+	    IP address of a DNS resolver.
+	* :code:`answer` : String
+		The resolver's response (IP address) to the probe domain.
 
-* :code:`resolver` : String
-    IP address of a DNS resolver.
-* :code:`answer` : String
-	The resolver's response (IP address) to the probe domain.
+2. Perform PTR queries on the IPs of resolvers with the correct probe response.
 
-:code:`resolvers.json`
+	:code:`resolvers_err.json` contains resolvers with failed PTR queries:
 
-* :code:`resolver` : String
-    IP address of a DNS resolver.
-* :code:`name` : String
-	Result from PTR query.
+	* :code:`resolver` : String
+	    IP address of a DNS resolver.
+	* :code:`error` : JSON Object
+		Contains error information.
 
-:code:`resolvers_ptr.json`
+	:code:`resolvers_ptr.json` contains resolvers with succesful PTR queries:
 
-* :code:`resolver` : String
-    IP address of a DNS resolver.
-* :code:`names` : Array
-    Result from PTR query.
+	* :code:`resolver` : String
+	    IP address of a DNS resolver.
+	* :code:`names` : Array
+	    Result from PTR query (the hostname).
+
+3. Identify infrastructure resolvers from successful PTR queries and add predefined "control" and "special" resolvers to form final set of vantage points.
+
+	:code:`resolvers.json` contains the infrastructure, "control", and "special" resolvers.
+
+	* :code:`resolver` : String
+	    IP address of a DNS resolver.
+	* :code:`name` : String
+		Result from PTR query (if infrastructure), "control", or "special".
 
 ------
 Query
 ------
 
-:code:`answers_control.json`
+1. Make DNS queries for each test domain to each resolver.
 
-* :code:`resolver` : String
-    The IP address of the vantage point (a DNS resolver).
-* :code:`query` : String
-    The domain being queried.
-* :code:`answers` : Array
-    Contains the resolver's returned answer IPs for the queried domain.
+	:code:`answers_err.json` contains erroneous queries (explicit error or 0 IPs returned):
 
-:code:`answers_err.json`
+	* :code:`resolver` : String
+	    The IP address of the vantage point (a DNS resolver).
+	* :code:`query` : String
+	    The domain being queried.
+	* :code:`error` : String / JSON Object
+	    Either "no_answer" or a dictionary with additional error information.
 
-* :code:`resolver` : String
-    The IP address of the vantage point (a DNS resolver).
-* :code:`query` : String
-    The domain being queried.
-* :code:`error` :
-    Either "no_answer" or a dictionary with additional error information.
+	:code:`answers_raw.json` contains raw responses from successful queries:
 
-:code:`answers_ip.json`
+	* :code:`resolver` : String
+	    The IP address of the vantage point (a DNS resolver).
+	* :code:`query` : String
+	    The domain being queried.
+	* :code:`data` : String
+	    Raw query response.
 
-* :code:`answer`: String
-	An IP address from a query response.
+2. Separate responses (converted to IP addresses) from control resolvers and non-control resolvers.
 
-:code:`answers.json`
+	:code:`answers_control.json` contains responses for queries to control resolvers:
 
-* :code:`resolver` : String
-    The IP address of the vantage point (a DNS resolver).
-* :code:`query` : String
-    The domain being queried.
-* :code:`answers` : Array
-    Contains the resolver's returned answer IPs for the queried domain.
+	* :code:`resolver` : String
+	    The IP address of the vantage point (a DNS resolver).
+	* :code:`query` : String
+	    The domain being queried.
+	* :code:`answers` : Array
+	    The resolver's response for the queried domain (list of answer IPs).
 
-:code:`answers_raw.json`
+	:code:`answers.json` contains responses for queries to non-control resolvers:
 
-* :code:`resolver` : String
-    The IP address of the vantage point (a DNS resolver).
-* :code:`query` : String
-    The domain being queried.
-* :code:`data` : String
-    Raw query response.
+	* :code:`resolver` : String
+	    The IP address of the vantage point (a DNS resolver).
+	* :code:`query` : String
+	    The domain being queried.
+	* :code:`answers` : Array
+	    The resolver's response for the queried domain (list of answer IPs).
+
+3. Determine set of IP addresses that appeared across all query responses for tagging.
+
+	:code:`answers_ip.json` contains these IPs, one IP per line:
+
+	* :code:`answer` : String
+		An IP address from a query response.
 
 ------
 Tag
 ------
 
-:code:`tagged_answers.json`
+1. Tag each answer IP with information from Censys.
 
-* :code:`ip` : String
-	An IP address from a query response.
-* :code:`http` : String
-	The hash of the HTTP body.
-* :code:`cert` : String
-	The hash of the TLS certificate.
-* :code:`asname` : String
-	The autonomous system (AS) name.
-* :code:`asnum` : Integer
-	The autonomous system (AS) number.
+	:code:`tagged_answers.json` contains the answer IPs and their HTTP, TLS, and AS tags: 
 
-:code:`tagged_resolvers.json`
+	* :code:`ip` : String
+		An IP address from a query response.
+	* :code:`http` : String
+		The hash of the HTTP body.
+	* :code:`cert` : String
+		The hash of the TLS certificate.
+	* :code:`asname` : String
+		The autonomous system (AS) name.
+	* :code:`asnum` : Integer
+		The autonomous system (AS) number.
 
-* :code:`resolver` : String
-	The IP address of the vantage point (a DNS resolver).
-* :code:`country` : String
-	The full name of the country where the resolver is located.
+2. Tag each resolver with the location from Maxmind.
+
+	:code:`tagged_resolvers.json` contains the resolvers and their countries:
+
+	* :code:`resolver` : String
+		The IP address of the vantage point (a DNS resolver).
+	* :code:`country` : String
+		The full name of the country where the resolver is located.
 
 ------
 Detect
 ------
 
-:code:`interference_err.json` contains resolver answers for queries with no control response, with the following fields:
+1. Compare query responses between non-control resolvers and control resolvers to identify interference. 
 
-* :code:`resolver` : String
-    The IP address of the vantage point (a DNS resolver).
-* :code:`query` : String
-    The domain being queried.
-* :code:`answers` : Array
-    Contains the resolver's returned answer IPs for the queried domain.
+	:code:`interference_err.json` contains resolver responses for queries with no control response:
 
-:code:`interference.json` contains the interference assessment for the remaining resolver answers, with the following fields:
+	* :code:`resolver` : String
+	    The IP address of the vantage point (a DNS resolver).
+	* :code:`query` : String
+	    The domain being queried.
+	* :code:`answers` : Array
+	    The resolver's response for the queried domain (list of answer IPs).
 
-* :code:`resolver` : String
-    The IP address of the vantage point (a DNS resolver).
-* :code:`query` : String
-    The domain being queried.
-* :code:`answers` : JSON object
-    The resolver's returned answer IPs for the queried domain are the keys. Each answer IP is mapped to an array of its tags that matched the control tags - if the IP is in the control set, "ip" is appended and if the IP has no tags, "no_tags" is appended.
-* :code:`passed` : Boolean
-    Equals true if interference is not detected.
+	:code:`interference.json` contains the interference assessment for the remaining resolver responses:
+
+	* :code:`resolver` : String
+	    The IP address of the vantage point (a DNS resolver).
+	* :code:`query` : String
+	    The domain being queried.
+	* :code:`answers` : JSON object
+	    The resolver's returned answer IPs for the queried domain are the keys. Each answer IP is mapped to an array of its tags that matched the control tags - if the IP is in the control set, "ip" is appended and if the IP has no tags, "no_tags" is appended.
+	* :code:`passed` : Boolean
+	    Equals true if interference is not detected.
+
+-----
+Stat
+-----
+
+:code:`stat_answers.json`
+
+:code:`stat_interference_agg.json`
+
+:code:`stat_interference_count.json`
+
+:code:`stat_interference_country_domain.json`
+
+:code:`stat_interference_country.json`
+
+:code:`stat_interference_country_percentage.json`
+
+:code:`stat_interference_err.json`
+
+:code:`stat_interference.json`
+
+:code:`stat_resolvers_country.json`
+
+:code:`stat_resolvers.json`
+
+:code:`stat_tagged.json`
