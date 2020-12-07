@@ -46,6 +46,8 @@ The published data has the following directory structure: ::
 Output
 *******
 
+The relevant output is located in the `raw/` directory.
+
 ------
 Probe
 ------
@@ -105,7 +107,7 @@ Query
 
 1. Make DNS queries for each test domain to each resolver.
 
-	:code:`answers_err.json` contains erroneous queries (explicit error or 0 IPs returned):
+	:code:`answers_err.json` contains erroneous queries:
 
 	* :code:`resolver` : String
 	    The IP address of the vantage point (a DNS resolver).
@@ -113,6 +115,14 @@ Query
 	    The domain being queried.
 	* :code:`error` : String / JSON Object
 	    Either "no_answer" or a dictionary with additional error information.
+
+	**Note:**
+
+		* In some cases, the :code:`resolver` field may be replaced by :code:`ip` - both are referring to the resolver's IP.
+
+		* "no_answer" appears in the :code:`error` field if no A resource records (IPs) are returned - this includes the :code:`NXDOMAIN` response.
+
+		* Responses with :code:`NXDOMAIN` or other errors may indicate censorship. However, these cases are not analyzed further in Satellite v1. 
 
 	:code:`answers_raw.json` contains raw responses from successful queries:
 
@@ -169,6 +179,10 @@ Tag
 	* :code:`asnum` : Integer
 		The autonomous system (AS) number.
 
+	**Note:**
+
+		* Fields may have null values if the information was not available on Censys.
+
 2. Tag each resolver with the location from Maxmind.
 
 	:code:`tagged_resolvers.json` contains the resolvers and their countries:
@@ -182,7 +196,7 @@ Tag
 Detect
 ------
 
-1. Compare query responses between non-control resolvers and control resolvers to identify interference. 
+1. Compare query responses between non-control resolvers and control resolvers to identify interference.
 
 	:code:`interference_err.json` contains resolver responses for queries with no control response:
 
@@ -204,65 +218,8 @@ Detect
 	* :code:`passed` : Boolean
 	    Equals true if interference is not detected.
 
------
-Stat
------
+	**Note:**
 
-:code:`stat_resolvers.json` computes stats for Filter.
-	
-	* :code:`resolvers_final` : Integer
+		* For each response, the answer IPs and their tags are compared to the set of answer IPs and tags from all the control resolvers for the same query domain. A response is classified as interference if there is no overlap between the two. 
 
-	* :code:`resolvers_ip_filtered` : Integer
-
-	* :code:`resolvers_ptr_filtered` : Integer
-
-	* :code:`resolvers_raw` : Integer
-
-:code:`stat_answers.json` computes stats for Query.
-
-	* :code:`control_answers_actual` : Integer
-
-	* :code:`control_answers_expected` : Integer
-
-	* :code:`errors` : Integer
-
-	* :code:`resolver_answers_actual` : Integer
-
-	* :code:`resolver_answers_expected` : Integer
-
-	* :code:`total_answers_actual` : Integer
-
-	* :code:`total_answers_expected` : Integer
-
-	* :code:`unique_ips` : Integer
-
-:code:`stat_tagged.json` computes stats for Tag.
-
-	* :code:`answers_tagged_actual` : Integer
-
-	* :code:`answers_tagged_expected` : Integer
-
-	* :code:`resolvers_tagged_actual` : Integer
-
-	* :code:`resolvers_tagged_expected` : Integer
-
-:code:`stat_interference_agg.json` computes stats for Detect.
-
-	* :code:`answers_failed` : Integer
-
-	* :code:`answers_passed` : Integer
-
-:code:`stat_interference_count.json` maps each resolver to the total counts of domains with and without interference.
-
-:code:`stat_interference_country_domain.json` maps each country and queried domain to the proportion of interference.
-
-:code:`stat_interference_country.json` maps each country and queried domain to the proportion of interference.
-
-:code:`stat_interference_country_percentage.json` maps each country to the percentages of domains with and without interference.
-
-:code:`stat_interference_err.json` maps domains to the number of unknown responses.
-
-:code:`stat_interference.json` maps each resolver IP to lists of its domains with and without interference.
-
-:code:`stat_resolvers_country.json` maps each country to the number of resolvers in that country.
-
+		* Cases where the control answer IPs have no tags will be considered interference if the resolver's answer IPs are not in the control set.
