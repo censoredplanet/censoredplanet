@@ -6,7 +6,7 @@ Satellite is Censored Planet's tool to detect DNS interference. Refer to the fol
 * `Global Measurement of DNS Manipulation <https://censoredplanet.org/assets/Pearce2017b.pdf>`_
 * `Satellite: Joint Analysis of CDNs and Network-Level Interference <https://censoredplanet.org/assets/Scott2016a.pdf>`_
 
-Satellite v1 corresponds to measurements from 2018 to December 2020. See Satellite for documentation on measurements taken after this date.
+Satellite v1 corresponds to measurements from 2018 to December 2020. See Satellite v2 for documentation on measurements taken after this date.
 
 The published data has the following directory structure: ::
 
@@ -223,3 +223,5 @@ Detect
 		* For each response, the answer IPs and their tags are compared to the set of answer IPs and tags from all the control resolvers for the same query domain. A response is classified as interference if there is no overlap between the two. 
 
 		* Cases where the control answer IPs have no tags will be considered interference if the resolver's answer IPs are not in the control set.
+
+		* Satellite v1 anomalies (interference detected) need to be explicitly confirmed by fetching pages hosted at the resolved IPs in post-processing. This functionality is included in Satellite v2.
