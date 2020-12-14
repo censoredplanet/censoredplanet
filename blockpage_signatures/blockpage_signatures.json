@@ -1,0 +1,439 @@
+{"fingerprint":"prod_barracuda_1","pattern":"<th>Barracuda NextGen Firewall:</th>"}
+{"fingerprint":"prod_barracuda_2","pattern":"Server: Barracuda/NGFirewall"}
+{"fingerprint":"prod_fortinet_1","pattern":"FortiGuard Web Filtering    "}
+{"fingerprint":"prod_fortinet_2","pattern":"fortinet.net"}
+{"fingerprint":"prod_fortinet_3","pattern":"<br/>Attack ID: 20000"}
+{"fingerprint":"prod_fortinet_4","pattern":"Powered By Fortinet"}
+{"fingerprint":"prod_fortinet_5","pattern":"FortiGate Application Control"}
+{"fingerprint":"prod_fortinet_6","pattern":"The page you have requested has been blocked, because the URL is banned."}
+{"fingerprint":"prod_fortinet_7","pattern":"Application Blocked"}
+{"fingerprint":"prod_fortinet_8","pattern":"Webfilter Violation"}
+{"fingerprint":"prod_cacheflow","pattern":"Please verify that the server you are attempting to contact is correct.  Continued failures will result in a complete revocation of access."}
+{"fingerprint":"prod_juniper","pattern":"Juniper Web Filtering"}
+{"fingerprint":"prod_paloalto_1","pattern":"Access to the web page you were trying to visit has been blocked in accordance with"}
+{"fingerprint":"prod_paloalto_2","pattern":"<body bgcolor=\"#e7e8e9\"><div id=\"content\"><h1>Web Page Blocked</h1>"}
+{"fingerprint":"prod_paloalto_3","pattern":"<p class=\"style17\" align=\"center\"><strong>Blocked by browsing policy</strong></p>"}
+{"fingerprint":"prod_paloalto_4","pattern":"Accesstothewebpageyouweretryingtovisithasbeenblockedinaccordancewith"}
+{"fingerprint":"prod_paloalto_5","pattern":"<p>Access to the application you were trying to use has been blocked in accordance with"}
+{"fingerprint":"prod_paloalto_6","pattern":"Please contact your system administrator if you believe this is in error"}
+{"fingerprint":"prod_paloalto_7","pattern":"<title>Takmarkað aðgengi</title>"}
+{"fingerprint":"prod_paloalto_8","pattern":"Application Control Verification"}
+{"fingerprint":"prod_webkeeper","pattern":"webkeeper_web/forbidden.jsp"}
+{"fingerprint":"prod_sonicwall_1","pattern":"If you believe the above web site is rated incorrectly click <a href=\"http://cfssupport.sonicwall.com/\""}
+{"fingerprint":"prod_sonicwall_2","pattern":"SonicWALL - Web Site Blocked"}
+{"fingerprint":"prod_sonicwall_3","pattern":"http://cfssupport.sonicwall.com"}
+{"fingerprint":"prod_watchguard_1","pattern":"Request denied by WatchGuard HTTP Proxy"}
+{"fingerprint":"prod_watchguard_2","pattern":"WatchGuard Firewall"}
+{"fingerprint":"prod_watchguard_3","pattern":"<title>Response denied by WatchGuard HTTP Proxy</title>"}
+{"fingerprint":"prod_cisco","pattern":"<strong>You are attempting to access a forbidden site.</strong><br/><br/>"}
+{"fingerprint":"prod_ibm_qradar","pattern":"The system has blocked access to the website according to your company policy."}
+{"fingerprint":"prod_smartxfilter","pattern":"SmartXFilter Message"}
+{"fingerprint":"prod_sucurifw_1","pattern":"Sucuri WebSite Firewall - Access Denied"}
+{"fingerprint":"prod_sucurifw_2","pattern":"Sucuri WebSite Firewall"}
+{"fingerprint":"prod_senhua","pattern":"/senhuablock.htm\";"}
+{"fingerprint":"prod_squid_1","pattern":"(104) Connection reset by peer</I></PRE>"}
+{"fingerprint":"prod_allot","pattern":"<IMG src=\"http://www.allot.com/images/allot_logo.gif\">"}
+{"fingerprint":"prod_vasexperts","pattern":"http://vasexperts.ru/test/blocked.php"}
+{"fingerprint":"prod_netentsec","pattern":"<title>NetentSec Content Filter - Access Denied</title>"}
+{"fingerprint":"prod_totalav","pattern":"<title>Total AV Blocked</title>"}
+{"fingerprint":"prod_pustekkom_id","pattern":"<h1>Pustekkom Web Filtering</h1>"}
+{"fingerprint":"prod_mcafee_1","pattern":"McAfee Web Gateway - Notification - Blocked by URL filtering"}
+{"fingerprint":"prod_mcafee_2","pattern":"McAfee Web Gateway - Notification - Blocked by GTI Reputation"}
+{"fingerprint":"prod_kaspersky_1","pattern":"Kaspersky Internet Security"}
+{"fingerprint":"prod_ddos_guard","pattern":"DDOS-GUARD"}
+{"fingerprint":"prod_eset_1","pattern":"Alert! - ESET Endpoint Antivirus"}
+{"fingerprint":"prod_eset_2","pattern":"Alerta! - ESET File Security"}
+{"fingerprint":"prod_kaspersky_2","pattern":"Kaspersky Anti-Virus"}
+{"fingerprint":"prod_spirdergate","pattern":"URL is blocked by SpIDer Gate"}
+{"fingerprint":"prod_drweb_1","pattern":"<title>Dr.Web strongly advises you against visiting this website</title>"}
+{"fingerprint":"prod_drweb_2","pattern":"https://support.drweb.com/new/urlfilter"}
+{"fingerprint":"prod_drweb_3","pattern":"URL % Sp%er Gate"}
+{"fingerprint":"prod_eset_3","pattern":"Alert! - ESET File Security"}
+{"fingerprint":"prod_mcafee_3","pattern":" <title>McAfee Web Gateway - Notification - Blocked by URL filtering</title>"}
+{"fingerprint":"prod_barracuda_3","pattern":"Server: Barracuda/NGFirewall"}
+{"fingerprint":"prd_NetentSec","pattern":"<title>NetentSec Content Filter - Access Denied</title>"}
+{"fingerprint":"prod_totalav_2","pattern":"<title>Total AV Blocked</title>"}
+{"fingerprint":"prod_totalav_3","pattern":"otal AV Bloccato"}
+{"fingerprint":"prod_totalav_4","pattern":"Total AV Bloqueados"}
+{"fingerprint":"prod_btkfilter","pattern":"policyName=BTK_FILTER"}
+{"fingerprint":"prod_msecure","pattern":"MSecure_WebSecurit_block_files/colorschememapping.xml"}
+{"fingerprint":"prod_msecure_2","pattern":"MSecure_WebSecurit_block_files"}
+{"fingerprint":"prod_pantheon","pattern":"This site is locked"}
+{"fingerprint":"prod_webknight_firewall","pattern":"WebKnight Application Firewall Alert"}
+{"fingerprint":"prod_trend_micro_interscan","pattern":"Blocking rule"}
+{"fingerprint":"prod_akamai_etp","pattern":"http://error.etp.akamai.com/error.html"}
+{"fingerprint":"prod_opendns_1","pattern":"https://block.opendns.com"}
+{"fingerprint":"prod_opendns_2","pattern":"https://malware.opendns.com"}
+{"fingerprint":"prod_huawei_esight","pattern":"The URL or page has been blocked"}
+
+{"fingerprint":"nat_ir_national_1","pattern":"10.10.34.35"}
+{"fingerprint":"nat_ir_national_2","pattern":"10.10.34.34"}
+{"fingerprint":"nat_ir_national_3","pattern":"10.10.34.36"}
+{"fingerprint":"nat_sa_national","pattern":"<title> Blocked URL العنوان محجو"}
+{"fingerprint":"nat_sa_national_2","pattern":"If you believe the requested page should not be blocked please%http://www.internet.gov.sa"}
+{"fingerprint":"nat_sa_violating_regulations","pattern":"Sorry, the requested page is violating the regulations of"}
+{"fingerprint":"nat_bh_national","pattern":"http://www.anonymous.com.bh/"}
+{"fingerprint":"nat_kr_comm","pattern":"warning.or.kr"}
+{"fingerprint":"nat_kr_comm_2","pattern":"rning.or.kr"}
+{"fingerprint":"nat_kr_comm_3","pattern":"or.kr/i2.html"}
+{"fingerprint":"nat_pak_isp_common_blockpage","pattern":"prohibited for viewership from within Pakistan"}
+{"fingerprint":"nat_slovakia","pattern":"www.overithraca.sk/webblokovany"}
+{"fingerprint":"nat_id_kominfo","pattern":"https://trustpositif.kominfo.go.id/"}
+{"fingerprint":"nat_columbia_gambling","pattern":"http://www.coljuegos.gov.co/publicaciones/301824"}
+{"fingerprint":"nat_columbia_gambling_2","pattern":"www.coljuegos.gov.co/"}
+{"fingerprint":"nat_ru","pattern":"http://graph.document.kremlin.ru/page.aspx"}
+{"fingerprint":"nat_ru_rkn","pattern":"http://blocklist.rkn.gov.ru/"}
+
+{"fingerprint":"isp_lb_general","pattern":"THIS WEBSITE HAS BEEN BLOCKED BASED ON A COURT ORDER FROM THE LEBANESE JUDICIAL SYSTEM."}
+{"fingerprint":"isp_ae_etislat","pattern":"http://proxy.etisalat.ae/"}
+{"fingerprint":"isp_kg_elcat","pattern":"<p class=\"error\">Access to the requested website has been blocked by judicial decision!</p>"}
+{"fingerprint":"isp_in_court_order","pattern":"The access to this site is prohibited as per instructions from Authority(s)/Honorable Court Order"}
+{"fingerprint":"isp_in_court_order_2","pattern":"Access Denied as per DOT/TRAI Guidelines - By Order </H1>"}
+{"fingerprint":"isp_ic_stef","pattern":"október 2015 lagði Sýslumaðurinn í Reykjavík að ósk STEF lögbann við að Hringiðan veiti viðskiptavinum sínum aðgang að þessu vefsvæði."}
+{"fingerprint":"isp_ci_mtn","pattern":"http://www.mtn.ci/MTNCI/SiteCollectionImages/global/mtn_logo.png"}
+{"fingerprint":"isp_in_airtel","pattern":"<iframe src=\"http://www.airtel.in/dot/\""}
+{"fingerprint":"isp_kw_zain","pattern":"<iframe src=\"http://restrict.kw.zain.com:8080/webadmin/deny/index.php?"}
+{"fingerprint":"isp_ko_skt","pattern":"<frame src=\"http://cleanmobile01.nate.com/sub_block.html?"}
+{"fingerprint":"isp_pk_witribe","pattern":"redirect.wi-tribe.net.pk/alert/"}
+{"fingerprint":"isp_co_ert","pattern":"http://190.6.160.34/"}
+{"fingerprint":"isp_be_telenet","pattern":"networkmsg.telenet.be/blocked/bea/"}
+{"fingerprint":"isp_cn_runxun","pattern":"http://www.runxun.com/weibeian.html"}
+{"fingerprint":"isp_re_rosintel","pattern":"http://block.rosintel.tk/?"}
+{"fingerprint":"isp_id_hypernet","pattern":"http://sehat.hypernet.co.id"}
+{"fingerprint":"isp_dk_tdc","pattern":"mailto:filter-stopside@tdc.dk"}
+{"fingerprint":"isp_kw_kems","pattern":"http://blocked.kems.net"}
+{"fingerprint":"isp_pk_wateen","pattern":"http://restrict.wateen.net/"}
+{"fingerprint":"isp_pk_wateen_2","pattern":"restrictk.wateen.net"}
+{"fingerprint":"isp_ru_radugainternet","pattern":"http://radugainternet.ru/kasat/access-error"}
+{"fingerprint":"isp_ru_sibset","pattern":"http://211.ru/149.html"}
+{"fingerprint":"isp_ru_alestanet","pattern":"http://zapret.alestanet.ru/"}
+{"fingerprint":"isp_ru_post","pattern":"http://blockpage.kmv.ru"}
+{"fingerprint":"isp_ru_vsevnet","pattern":"http://vsevnet.ru/zapr_site.html"}
+{"fingerprint":"isp_ru_mediakvant","pattern":"http://mediakvant.ru/block"}
+{"fingerprint":"isp_ru_ita","pattern":" https://rta-telecom.ru/deny.html"}
+{"fingerprint":"isp_ru_arbuz","pattern":"http://www.arbuz.ru/zapret.htm"}
+{"fingerprint":"isp_ru_omkc","pattern":"http://217.25.208.13"}
+{"fingerprint":"isp_ru_at_home","pattern":"http://zapret-info.b2b.at-home.ru"}
+{"fingerprint":"isp_ru_enicom","pattern":"http://alert.enicom.ru:81/"}
+{"fingerprint":"isp_ru_signaltv","pattern":"http://detect-web.signaltv.net/3/"}
+{"fingerprint":"isp_ru_insysnet","pattern":"http://blackhole.insysnet.ru/zapret-info-tst.html"}
+{"fingerprint":"isp_ru_masterra","pattern":"http://noaccess.masterra.ru/zapret/"}
+{"fingerprint":"isp_ru_kividex","pattern":"http://blocked.kvidex.ru/"}
+{"fingerprint":"isp_ru_taiget","pattern":"http://hold.taiget.ru/block"}
+{"fingerprint":"isp_ru_weba","pattern":"http://secure.weba.ru/"}
+{"fingerprint":"isp_ru_edpnet","pattern":"http://stop.edpnet.net/ru-censored/"}
+{"fingerprint":"isp_ru_telemagadan","pattern":"http://www.telemagadan.ru/"}
+{"fingerprint":"isp_ru_telemagdan_2","pattern":"http://www.telemagadan.ru/bloked.php"}
+{"fingerprint":"isp_ru_it_internet","pattern":"http://it-internet.ru/index.php?"}
+{"fingerprint":"isp_ru_communication","pattern":"http://gksvyaz.ru/"}
+{"fingerprint":"isp_ru_infodom","pattern":"http://host72.ru/blocked/"}
+{"fingerprint":"isp_ru_tscrimea_2","pattern":"ttp://rknblock.tscrimea.ru"}
+{"fingerprint":"isp_ru_tscrimea_3","pattern":"http://rknblock.tscrimea.com"}
+{"fingerprint":"isp_ru_novotelecom_2","pattern":"http://zapret.2090000.ru"}
+{"fingerprint":"isp_ru_taiget","pattern":"https://hold.taiget.ru/block?"}
+{"fingerprint":"isp_ru_divo_2","pattern":"https://www.divo.ru/"}
+{"fingerprint":"isp_ru_iterika_2","pattern":"http://iterika.ru/blocked.html?"}
+{"fingerprint":"isp_ru_teleseti","pattern":"http://www.teleseti.com/"}
+{"fingerprint":"isp_ru_convex","pattern":"http://ban.convex.ru/index.html"}
+{"fingerprint":"isp_ru_rvso","pattern":"http://billing.spb.rsvo.ru/blocked/blocked.html"}
+{"fingerprint":"isp_ru_peter","pattern":"http://blackhole.piter-telecom.ru/"}
+{"fingerprint":"isp_ru_wiland","pattern":"http://blocked.wiland.ru/"}
+{"fingerprint":"isp_ru_kamenkstel","pattern":"http://block.kamensktel.ru/"}
+{"fingerprint":"isp_ru_avantel_1","pattern":"http://block.msk.avantel.ru/"}
+{"fingerprint":"isp_ru_avantel_2","pattern":"http://block.msk.avantel.ru?"}
+{"fingerprint":"isp_ru_orion","pattern":"http://block.orionnet.ru/index-zapret.php"}
+{"fingerprint":"isp_ru_sivash","pattern":"http://block.sivash.net/index.html"}
+{"fingerprint":"isp_ru_strela","pattern":"http://block.strelatelecom.ru"}
+{"fingerprint":"isp_ru_game_service","pattern":"http://close.g-service.ru/access_denied_op.html"}
+{"fingerprint":"isp_ru_infolink","pattern":"http://infolink.ru/messages/180.html"}
+{"fingerprint":"isp_ru_intertax","pattern":"http://krsn.ru/redir/extrim/"}
+{"fingerprint":"isp_ru_east_media","pattern":"http://law.vms56.ru/law.html"}
+{"fingerprint":"isp_ru_east_media_2","pattern":"http://law.vms56.ru"}
+{"fingerprint":"isp_ru_sky@net","pattern":"https://redirects.tvhost.ru/ban/"}
+{"fingerprint":"isp_ru_sevstar","pattern":"http://rublacklist.sevstar.net/"}
+{"fingerprint":"isp_ru_sevstar_2","pattern":"http://rublacklist.sevstar.net"}
+{"fingerprint":"isp_ru_altegrosky","pattern":"https://07.altegrosky.ru/180.html"}
+{"fingerprint":"isp_ru_dtel","pattern":"https://dtel.ru/block.htm"}
+{"fingerprint":"isp_ru_goodline","pattern":"http://site-blocked.ru/"}
+{"fingerprint":"isp_ru_goodline_2","pattern":"https://lk.goodline.info/middlestatus.html"}
+{"fingerprint":"isp_ru_dianet","pattern":"http://stub.dianet.ru/forbidden/"}
+{"fingerprint":"isp_ru_maglan","pattern":"http://www.maglan.ru/internet/blocked"}
+{"fingerprint":"isp_ru_skynet","pattern":"http://www.skynet-kazan.com/_blocked.htm"}
+{"fingerprint":"isp_ru_sibitex","pattern":"http://www.tmn.rblocked.mts.ruu/cgi-bin/stub_html"}
+{"fingerprint":"isp_ru_sibitex_2","pattern":"http://www.tmn.ru/cgi-bin/stub_html.pl"}
+{"fingerprint":"isp_ru_novotelecom","pattern":"http://zapret.2090000.ru/"}
+{"fingerprint":"isp_ru_yota","pattern":"forbidden.yota.ru"}
+{"fingerprint":"isp_ru_dsi","pattern":"zapret-info.dsi.ru"}
+{"fingerprint":"isp_ru_kristel","pattern":"www.kristel.ru/?mode=zapret"}
+{"fingerprint":"isp_ru_itnet_1","pattern":"block.itnet33.ru/info/forbiddens.php?UrlRedir=http%3A%2F%2F1337x.to%2f"}
+{"fingerprint":"isp_ru_westlan","pattern":"block.westlan.ru"}
+{"fingerprint":"isp_ru_ugmk","pattern":"blocked.ugmk-telecom.ru"}
+{"fingerprint":"isp_ru_spacenet","pattern":"deny.spacenet.ru/"}
+{"fingerprint":"isp_ru_acme","pattern":"intel.acmetelecom.ru/block.htm"}
+{"fingerprint":"isp_ru_iterika","pattern":"iterika.ru/blocked.html?UrlRedir=http%3A%2F%2Fblackberry.com%2f"}
+{"fingerprint":"isp_ru_mosnet","pattern":"mosnet.ru/customers/obsluzhivanie/blocked-site.html"}
+{"fingerprint":"isp_ru_metronet","pattern":"https://www.metro-set.ru/zapret"}
+{"fingerprint":"isp_ru_metronet_2","pattern":"http://www.metro-set.ru/zapret"}
+{"fingerprint":"isp_ru_redcom","pattern":"https://redcom.ru/law/index.html"}
+{"fingerprint":"isp_ru_bashtel","pattern":"notify.bashtel.ru/block-rkn/"}
+{"fingerprint":"isp_ru_tscrimea","pattern":"rknblock.tscrimea.com/"}
+{"fingerprint":"isp_ru_iks","pattern":"http://zapret.iks.ru/"}
+{"fingerprint":"isp_ru_divo","pattern":"https://www.divo.ru/%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D0%B9-%D1%80%D0%B5%D1%81%D1%83%D1%80%D1%81-%D0%B7%D0%B0%D0%B1%D0%BB%D0%BE%D0%BA%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD/?UrlRedir=http%3A%2F%2Fdrugs-forum.com%2f"}
+{"fingerprint":"isp_ru_beeline","pattern":"blackhole.beeline.ru"}
+{"fingerprint":"isp_ru_mts","pattern":"blocked.mts.ru"}
+{"fingerprint":"isp_ru_flex","pattern":"flex.ru/zapret.html"}
+{"fingerprint":"isp_ru_pjscrostelekom","pattern":"<a class=\"logo\" href=\"https://rt.ru/?utm_source=warningpage&utm_campaign=logo&utm_content=main\">"}
+{"fingerprint":"isp_ru_mgts","pattern":"<div class=\"footer_cell\">&copy; 2019, ПАО МГТС</div>"}
+{"fingerprint":"isp_ru_generalbp1","pattern":"Доступ к запрашиваемому ресурсу ограничен.</b></h1>"}
+{"fingerprint":"isp_ru_generalbp2","pattern":"<p>Искомый домен внесен в РЕЕСТР доменных имен, указателей страниц сайтов в сети «Интернет» и сетевых адресов, позволяющих идентифицировать сайты в сети «Интернет», содержащие информацию, распространение которой в Российской Федерации запрещено</p>"}
+{"fingerprint":"isp_ru_generalbp11","pattern":"<p style=\"text-align: justify; font-size: 14pt;margin-top:15px;text-indent:30px;\"><b>Доступ к данному сайту (странице сайта) ограничен в соответствии с требованиями ФЗ  «Об информации, информационных технологиях и о защите информации» N 149-ФЗ от 27 июля 2006 года в связи с его включением уполномоченным органом (Роскомнадзор) в Единый реестр доменных имен, указателей страниц сайтов в сети \"Интернет\" и сетевых адресов, позволяющих идентифицировать сайты в сети \"Интернет\", содержащие информацию распространение которой в Российской Федерации запрещено, в том числе содержащие информацию, распространяемую с нарушением исключительных прав или содержащие призывы к массовым беспорядкам, осуществлению экстремистской деятельности, участию в массовых (публичных) мероприятиях, проводимых с нарушением установленного порядка.</b></p>"}
+{"fingerprint":"isp_ru_generalbp3","pattern":"<h1>Уважаемые пользователи! Приносим свои извинения, доступ к информационному ресурсу ограничен на основании Федерального закона от 27 июля 2006 г. № 149-ФЗ «Об информации, информационных технологиях и защите информации»</h1>"}
+{"fingerprint":"isp_ru_generalbp4","pattern":"<a href=\"https://ru.wikipedia.org/wiki/Федеральный_закон_№_398-ФЗ_от_28_декабря_2013_года\">398 ФЗ</a>.</p>"}
+{"fingerprint":"isp_ru_generalbp5","pattern":"src=\"http://www.ferra.ru/images/416/416695.jpeg\""}
+{"fingerprint":"isp_ru_generalbp6","pattern":"<h1 class=\"message__title\">Доступ к информационному ресурсу ограничен на основании ФЗ от 27.07.2006 г. №149-ФЗ \"Об информации, информационных технологиях и о защите информации\"</h1>"}
+{"fingerprint":"isp_ru_generalbp7","pattern":"<p>Доступ к запрашиваемому Вами ресурсу Интернет ограничен в соответствии с требованиями законодательства.</p>"}
+{"fingerprint":"isp_ru_mark","pattern":"<p>Марк</p>"}
+{"fingerprint":"isp_ru_akado","pattern":"<p>ОАО «КОМКОР». Россия, 117535, г. Москва, Варшавское шоссе, д. 133. ИНН 7717020170  ОГРН 1027739387521</p>"}
+{"fingerprint":"isp_ru_generalbp8","pattern":"<p>Искомый домен внесен в РЕЕСТР доменных имен, указателей страниц сайтов в сети «Интернет» и сетевых адресов, позволяющих идентифицировать сайты в сети «Интернет», содержащие информацию, распространение которой в Российской Федерации запрещено</p>"}
+{"fingerprint":"isp_ru_generalbp9","pattern":"<!-- saved from url=(0020)http://95.167.13.50/ -->"}
+{"fingerprint":"isp_ru_prod_vasexperts","pattern":"<p>Если Вы считаете, что запрашиваемый Вами материал заблокирован некорректно - обратитесь в службу технической поддержки по электронной почте: <a href=\"mailto:support@vasexperts.ru\">support&#0064;vasexperts.ru</a>.</p>"}
+{"fingerprint":"isp_ru_generalbp10","pattern":"</h1><p>Если Вы считаете, что включение ip-адреса нужного Вам интернет-ресурса в \"Единый реестр...\" или \"Реестр доменных имен...\" произошло по ошибке, или оно нарушает Ваши законные права, пожалуйста, обращайтесь непосредственно к уполномоченному органу по координатам на интернет-сайте реестра.</p></div><a href=\"http://blocklist.rkn.gov.ru/\">Перейти на сайт<br />"}
+{"fingerprint":"isp_puntonet","pattern":"<title>Aplicación Bloqueada</title>"}
+{"fingerprint":"isp_cbn","pattern":"Block Page - CBN Internet"}
+{"fingerprint":"isp_viettel","pattern":"Access denied · Viettel WAF"}
+{"fingerprint":"isp_ru_schelkovonet","pattern":"http://blacklist.schelkovo-net.ru/?"}
+{"fingerprint":"isp_ru_itnet_2","pattern":"http://block.itnet33.ru/info/forbiddens.php"}
+{"fingerprint":"isp_ru_tkmiran","pattern":"http://block.tk-miran.ru/block.php?"}
+{"fingerprint":"isp_sg_general","pattern":"Access to the website has been blocked pursuant to an Order of the High Court of Singapore."}
+{"fingerprint":"isp_sg_general_2","pattern":"The High Court of Singapore has ordered a blocking of access to the online location you are attempting to reach as it violates the Copyright Act."}
+{"fingerprint":"isp_in_sunnnetwork","pattern":"<a href=\"intrusion@sunnetwork.in\" target=\"_blank\">intrusion@sunnetwork.in</a>"}
+{"fingerprint":"isp_in_generic_dot_1","pattern":"blocked as per instructions from Department of Telecommunications of India"}
+{"fingerprint":"isp_in_generic_dot_2","pattern":"Your requested URL has been blocked as per the directions received from Department of Telecommunications, Government of India"}
+{"fingerprint":"isp_ua_president_decree","pattern":"Блокування сайтів Указом Президента України від"}
+{"fingerprint":"isp_id_utaramedia","pattern":"block.utaramedia.net"}
+{"fingerprint":"isp_id_indosat","pattern":"<title>Netsafe IndosatM2</title>"}
+{"fingerprint":"isp_id_melsa","pattern":"http://www.melsa.net.id/main/blocked"}
+{"fingerprint":"isp_id_govt_trustpositive_1","pattern":"<title>Internet Positif</title>"}
+{"fingerprint":"isp_id_govt_trustpositive_2","pattern":"TRUST POSITIF"}
+{"fingerprint":"isp_ro_onjn_1","pattern":"Accesul dumneavoastră către acest site a fost restricționat de Oficiul Național pentru Jocuri de Noroc"}
+{"fingerprint":"isp_ro_onjn_2","pattern":"Accesul dumneavoastră către acest site a fost restricționat de Oficiul Național pentru Jocuri de Noroc."}
+{"fingerprint":"isp_no_breiband","pattern":"Tingretten har pålagt Breiband.no og andre internett-tilbydere å iverksette DNS-blokkering av dette nettstedet"}
+{"fingerprint":"isp_cy_nba","pattern":"https://nba.gov.cy/"}
+
+{"fingerprint":"corp_dk_statens_it","pattern":"blokeret"}
+{"fingerprint":"corp_bh_viva","pattern":"<a href=\"http://www.myviva.com.bh/sites/ITServices/Pages/webFilteringRequest.aspx\">Web Filtering Exception Request</a>"}
+{"fingerprint":"corp_ru_elko","pattern":"<a href=\"http://www.elkogroup.com\" title=\"Elko Group\" class=\"logo\">ELKO Group</a>"}
+{"fingerprint":"corp_iq_auis","pattern":"http://172.30.0.99:8080/auis-logo.jpg"}
+{"fingerprint":"corp_br_gov","pattern":"servicedesk@gdfnet.df.gov.br"}
+{"fingerprint":"corp_ye_teleyemen","pattern":"IT.Security@TeleYemen.com.ye"}
+{"fingerprint":"corp_sg_nus","pattern":"Access to this website is restricted by NUS"}
+{"fingerprint":"corp_us_nwu","pattern":"The resource you are trying to access is being blocked by the Northwestern IT Information Security team"}
+{"fingerprint":"corp_dk_adgan","pattern":"Ingen adgang til denne side"}
+{"fingerprint":"corp_kr_gnu","pattern":"/websray/wbs_access_deny_2.gif"}
+{"fingerprint":"corp_stcs_sa","pattern":"http://stcs-dotsweb.stcs.com.sa/index.html"}
+{"fingerprint":"corp_ru_it_grad","pattern":"https://www.it-grad.ru/blockpage.html"}
+{"fingerprint":"corp_ru_it_grad_2","pattern":"http://www.it-grad.ru/blockpage.html"}
+{"fingerprint":"corp_ru_govorit","pattern":"http://blockpage.govorit.ru/"}
+{"fingerprint":"corp_ru_pu","pattern":"http://block.pu.ru/warning-blocked.html"}
+{"fingerprint":"corp_ru_pstu","pattern":"Location: http://blocked.pstu.ru"}
+{"fingerprint":"corp_col_uniminuto","pattern":"<p>Lo sentimos, el acceso a este sitio se encuentra restringido debido a que puede incluir contenido no apto. Si considera que es un error comuníquese con el Centro de Experiencia Tecnológica 2916520 Ext 6622 o gestione la solicitud por la herramienta <a href=\"http://soporte.uniminuto.edu/glpi/\">aquí.</a></p>"}
+{"fingerprint":"corp_cfe_mx","pattern":"<title>PAGINA BLOQUEADA</title>"}
+{"fingerprint":"corp_cfe_mx_2","pattern":"BLOQUEADA</h1>"}
+{"fingerprint":"corp_mabe_mx","pattern":"mailto:service.desk@mabe.com.mx"}
+{"fingerprint":"corp_gob_ec","pattern":"This site is blocked because it violates network policy"}
+{"fingerprint":"corp_cardiff","pattern":"<title>Cardiff University :: Application Blocked</title>"}
+{"fingerprint":"corp_nyu","pattern":"contact the NYU IT Service Desk AskIT@nyu.edu"}
+{"fingerprint":"corp_Grupo_energia","pattern":"Por politicas de seguridad de la informacion del Grupo Energia Bogota, este acceso se encuentra restringido"}
+{"fingerprint":"corp_tencent","pattern":" http://imgcache.qq.com/wss/beian/static/block.html"}
+{"fingerprint":"corp_qcloud_1","pattern":"https://dnspod.qcloud.com/static/webblock.html?d="}
+{"fingerprint":"corp_qcloud_2","pattern":"https://dnspod.qcloud.com/static/block.html?d="}
+{"fingerprint":"corp_dns_gd","pattern":"http://www.dns.gd.cn/index.html?url="}
+{"fingerprint":"corp_shanghai_blue_cloud","pattern":"<title>上海蓝云阻断页面</title>"}
+{"fingerprint":"corp_xian_tianhu_communication","pattern":"很抱歉，该网页已被阻断"}
+{"fingerprint":"cort_kz_ps","pattern":"Страница заблокирована"}
+{"fingerprint":"corp_cn_ucloud","pattern":"因该网站未进行备案或涉及发布违禁信息，违反工信部、公安部相关规定而无法访问"}
+{"fingerprint":"corp_starnet","pattern":"StarNET | Blocked Page"}
+{"fingerprint":"corp_colmedica","pattern":"Su solicitud ha sido bloqueada por una politica de seguridad"}
+{"fingerprint":"corp_hkust","pattern":"Access to this malicious web site from HKUST has been blocked by ITSC for your protection"}
+{"fingerprint":"cortp_thai_csloxinfo","pattern":"http://redir.csloxinfo.com/court.html"}
+{"fingerprint":"corp_novachem","pattern":"<title>Defense Center Blocked Message</title"}
+{"fingerprint":"corp_shroomery","pattern":"Shroomery - Blocked"}
+{"fingerprint":"corp_medicinehat_college","pattern":"The website or contents that you are trying to reach has been blocked"}
+{"fingerprint":"corp_universidad_pontificia_bolivariana","pattern":"<h1>Contenido bloqueado</h1>"}
+{"fingerprint":"corp_universidad_rey_juan_carlos","pattern":"<h2>Acceso bloqueado</h2>"}
+{"fingerprint":"corp_kerrylogistics","pattern":"<title>Blocked Request</title>"}
+{"fingerprint":"corp_br_angeloni","pattern":"<p>Acesso Negado</p>"}
+{"fingerprint":"corp_co_compensar","pattern":"<h1>SITIO WEB RESTRINGIDO</h1>"}
+{"fingerprint":"corp_mn_capital_bank","pattern":"<h1>Аппликейшн хаагдсан байна</h1>"}
+{"fingerprint":"corp_se_public_health_agency","pattern":"Applikation blockerad"}
+{"fingerprint":"corp_at_university_vienna","pattern":"(Malware, Botnet, Phishing etc.)"}
+{"fingerprint":"corp_ca_stm","pattern":"Page Web bloq"}
+{"fingerprint":"corp_mckesson_using_prod_paloalto","pattern":"Warning: Internet site blocked by McKesson"}
+
+{"fingerprint":"unk_bloquedo","pattern":"bloqueo.png\" alt \"Sitio Bloqueado"}
+{"fingerprint":"unk_bloquedo_2","pattern":"bloqueo.png"}
+{"fingerprint":"unk_tz_rcip","pattern":"Please contact your  ISP on Number 0222142250 for more information"}
+{"fingerprint":"unk_ru_forbid","pattern":">ПРИСТУП ЗАБРАЊЕН<"}
+{"fingerprint":"unk_hn_forbid","pattern":"Acceso Denegado"}
+{"fingerprint":"unk_work_id","pattern":"<h1>Kebijakan Akses Internet</h1><p>Situs ini akan dibuka kembali antara pukul 12.00 - 13.00 WIB. Selamat Bekerja!<br />"}
+{"fingerprint":"unk_ser_forbid","pattern":"Овом сајту је забрањен приступ административном полисом због малициозних садржаја"}
+{"fingerprint":"unk_org","pattern":"Internet use policy restricts access to this web page at this time.<br/>Please contact your network administrator."}
+{"fingerprint":"unk_warn","pattern":"<H1>This webpage has been blocked</H1>"}
+{"fingerprint":"unk_report","pattern":"<p>Access to the requested resource has been blocked<br/>by the decision of public authorities.</p>"}
+{"fingerprint":"unk_china_domain_not_registered","pattern":"您的域名被屏蔽访问的原因：</br>"}
+{"fingerprint":"unk_china_web_blocked","pattern":"<p>您访问的网站被屏蔽，有可能是以下原因造成：</p>"}
+{"fingerprint":"unk_blk_1","pattern":"https://151.181.63.37:6081/"}
+{"fingerprint":"unk_blk_2","pattern":"http://137.152.92.206:6080/"}
+{"fingerprint":"unk_blk_3","pattern":"http://176.55.252.4:8080"}
+{"fingerprint":"unk_blk_4","pattern":"http://121.166.148.217/warning.htm"}
+{"fingerprint":"unk_blk_5","pattern":"Location: http://91.245.35.26/"}
+{"fingerprint":"unk_blk_6","pattern":"http://213.14.227.50/landpage?ms=http://ok.ru/"}
+{"fingerprint":"unk_blk_8","pattern":"您正在访问恶意网页"}
+{"fingerprint":"unk_blk_9","pattern":"http://114.113.224.20:8123/feifa/code.htm"}
+{"fingerprint":"unk_blk_10","pattern":"/css/block.css"}
+{"fingerprint":"unk_blk_11","pattern":"禁止访问"}
+{"fingerprint":"unk_ip_url_block","pattern":"urlblock.php?args="}
+{"fingerprint":"unk_cn_not_filed_1","pattern":"您好，该域名未备案，已被封停，请联系机房核实！！！！"}
+{"fingerprint":"unk_cn_not_filed_2","pattern":"您好，该域名未备案，请联系机房核实！！！！"}
+{"fingerprint":"unk_cn_abnormal","pattern":"您的请求异常，已被网站管理员设置受限访问！"}
+{"fingerprint":"unk_forbid","pattern":"<h1>Forbidden</h1><pre>Request ID:"}
+{"fingerprint":"unk_ru_roskomnadzor","pattern":"https://secure.weba.ru/index.php?"}
+{"fingerprint":"unk_ru_blocked","pattern":"http://site-blocked.ru?"}
+{"fingerprint":"unk_id_gambling","pattern":"mungkin mengandung unsur ilegal, pornografi, perjudian, kekerasan atau narkoba"}
+{"fingerprint":"unk_ru_blocked","pattern":"Доступ до даного сайту обмежений згідно"}
+{"fingerprint":"unk_tr_access","pattern":"sayfaya erişiminiz sağlanamamaktadır"}
+{"fingerprint":"unk_id_blocked","pattern":"Anda di blokir!!!"}
+{"fingerprint":"unk_ru_roskomnadzor_2","pattern":"http://176.114.16.100/block_url.html"}
+{"fingerprint":"unk_id_blocked","pattern":"Maaf, Situs Yang Anda Akses di Blokir"}
+{"fingerprint":"unk_ro_unauthorized","pattern":"<title>Acces neautorizat</title>"}
+{"fingerprint":"unk_cn_denied","pattern":"<title>拒绝访问</title>"}
+{"fingerprint":"unk_pt_blocked","pattern":"<title>Bloqueado por ordem judicial</title>"}
+{"fingerprint":"unk_ru_blocked","pattern":"<h1>Данный ресурс заблокирован!</h1>"}
+{"fingerprint":"unk_ru_restrict","pattern":"иконуючи вимоги зазначеного Указу проводяться технічні заходи з обмеження надання послуг доступу до зазначених веб-ресурсів, відповідно з нашими технічними можливостями"}
+{"fingerprint":"unk_ua_blocked","pattern":"Блокування сайтів Указом Президента України від"}
+{"fingerprint":"unk_it_notice","pattern":"<h1>AVVISO</h1>"}
+{"fingerprint":"unk_filtered","pattern":"<title>Website Filtered</title>"}
+{"fingerprint":"unk_kidprotect","pattern":"<title>KIDPROTECT NETWORK</title>"}
+{"fingerprint":"unk_de_blocked","pattern":"<title>Website gesperrt</title>"}
+{"fingerprint":"unk_it_police_blocked","pattern":"ATTENZIONE!! - POLIZIA POSTALE E DELLE COMUNICAZIONI - PAGINA BLOCCATA"}
+{"fingerprint":"unk_disabled","pattern":"<title>Access to the requested content/website has been disabled</title>"}
+{"fingerprint":"unk_co_blocked","pattern":"El Sitio al que Intenta ingresar ha sido bloqueado por disposición del Ministerio de las Tecnologías de la Información y las Comunicaciones de la Republica de Colombia"}
+{"fingerprint":"unk_ru_blocked_2","pattern":"<title>Запрос блокирован</title>"}
+{"fingerprint":"unk_it_inhibition","pattern":"Inibizione siti"}
+{"fingerprint":"unk_ebguard","pattern":"ebGuard AGTI"}
+{"fingerprint":"unk_gambler_stuff","pattern":"Sorry, the site you visit contain porn & gambler stuff"}
+{"fingerprint":"unk_still_blocked","pattern":"site is still blocked"}
+{"fingerprint":"unk_nta_block","pattern":"<h1>This web site has been blocked as per NTA%s policy</h1>"}
+{"fingerprint":"unk_ru_blocked_3","pattern":"Сайт все еще заблокирован"}
+{"fingerprint":"unk_secns","pattern":"http://secns.ch/"}
+{"fingerprint":"unk_ru_blocked_4","pattern":"Доступ заблокирован"}
+{"fingerprint":"unk_tr_legal_warning","pattern":"<title>YASAL UYARI</title>"}
+{"fingerprint":"unk_se_blocked","pattern":"Sidan du försöker nå är blockerad"}
+{"fingerprint":"no_match","pattern":"Situs yang anda buka tidak bisa diakses melalui jaringan ini"}
+{"fingerprint":"unk_cn_dongzhimen","pattern":"<title>东直门138阻断</title>"}
+{"fingerprint":"unk_cn_isp_youwei_fashion","pattern":"zd.ywfscdn.com"}
+{"fingerprint":"unk_cn_miit_temporarily_unavailable","pattern":"您的网站暂时无法访问"}
+{"fingerprint":"unk_cn_isp_runxun","pattern":"www.runxun.com/weibeian.html"}
+{"fingerprint":"unk_cn_blocking","pattern":"220.231.20.138:9080"}
+{"fingerprint":"unk_cn_temporarily_unavailable","pattern":"温馨提示：该网站暂时无法访问，有可能是以下原因：</br>"}
+{"fingerprint":"unk_cl_no_puedo_mostrar","pattern":"NO puedo mostrar este sitio Web"}
+{"fingerprint":"unk_namuwiki_datacenter_ip","pattern":"They are blocked to prevent"}
+{"fingerprint":"unk_malicious_website","pattern":"It is reported to be a malicious website"}
+{"fingerprint":"unk_in_ncvt_temporarily_blocked","pattern":"<h2>Access Temporarily Blocked</h2>"}
+{"fingerprint":"unk_cpanel_403_forbidden","pattern":"Access is forbidden to the requested page:"}
+{"fingerprint":"unk_competent_authority","pattern":"This site has been blocked as per the instructions of Competent Authority</font> </h2>"}
+{"fingerprint":"unk_isp_or_corp_ca_mornington","pattern":"access to it is blocked from the Mornington network"}
+{"fingerprint":"unk_style_red","pattern":"<span style=%color:red;%>(æ¡æ"}
+
+{"fingerprint":"gen_web_page_blocked","pattern":"<title>Web Page Blocked!</title>"}
+{"fingerprint":"gen_pagina_web_bloqueda_1","pattern":"<title>Página Web Bloqueada!</title>"}
+{"fingerprint":"gen_pagina_web_bloqueda_2","pattern":"<title> ¡PÃ¡gina Web Bloqueada!</title>"}
+{"fingerprint":"gen_pagina_web_bloqueda_3","pattern":"<title>¡Página Web Bloqueada!</title>"}
+{"fingerprint":"gen_web_bloqueada","pattern":"Web Bloqueada!"}
+{"fingerprint":"gen_loqueada","pattern":"loqueada"}
+{"fingerprint":"gen_cn_1","pattern":"<title>非法阻断</title>"}
+{"fingerprint":"gen_id_govt","pattern":"Sebagai bentuk dukungan terhadap program \"Internet Sehat\" milik pemerintah Indonesia, maka kami menutup akses ke situs yang Anda kunjungi."}
+{"fingerprint":"gen_cn_2","pattern":"您的域名因未取得工信部网站备案号，按照工信部33号令屏蔽访问。请您办理工信部网站备案，取得网站备案号后恢复访问。"}
+{"fingerprint":"gen_cn_3","pattern":"您访问的网站被机房安全管理系统拦截，有可能是以下原因造成"}
+{"fingerprint":"gen_cn_4","pattern":"http://58.30.28.92/index.html"}
+{"fingerprint":"gen_ru_1","pattern":"Доступ на цей ресурс/сервіс заблоковано відповідно до Указу"}
+{"fingerprint":"gen_ru_2","pattern":"Доступ к ресурсу заблокирован!"}
+{"fingerprint":"gen_ru_3","pattern":"Доступ к сайту ограничен в соответствии с Федеральными законами"}
+{"fingerprint":"gen_ru_3","pattern":"Доступ ограничен"}
+{"fingerprint":"gen_ru_5","pattern":"Доступ заблоковано"}
+{"fingerprint":"gen_ru_6","pattern":"ДОСТУП К РЕСУРСУ ОГРАНИЧЕН"}
+{"fingerprint":"gen_ru_7","pattern":"Доступ к запрашиваемому ресурсу ограничен"}
+{"fingerprint":"gen_ru_8","pattern":"<title>Доступ запрещён</title>"}
+{"fingerprint":"gen_ru_9","pattern":"Ресурс по данному IP-адресу заблокирован"}
+{"fingerprint":"gen_ru_10","pattern":"http://85.234.0.61/"}
+{"fingerprint":"gen_ru_11","pattern":"http://81.23.192.41/index.html"}
+{"fingerprint":"gen_sk_denied","pattern":"Prístup k webovému sídlu bol zamedzený"}
+{"fingerprint":"gen_451","pattern":"451 Unavailable For Legal Reasons"}
+{"fingerprint":"gen_ua","pattern":"даний ресурс заблоковано"}
+{"fingerprint":"gen_tr","pattern":"http://213.14.227.50/landpage?ms=http://hqq.tv/"}
+{"fingerprint":"gen_sloval","pattern":"Aplikacija je nedostupna"}
+{"fingerprint":"gen_polish","pattern":"zablokowan"}
+{"fingerprint":"gen_web_blocked","pattern":"<title>Web Page Blocked</title>"}
+{"fingerprint":"gen_spanish","pattern":"Esta pagina esta bloqueada"}
+{"fingerprint":"gen_web_filter","pattern":"Web Filter"}
+{"fingerprint":"gen_spanish_2","pattern":"Pagina Bloccata"}
+{"fingerprint":"gen_olish_2","pattern":"Aplikacija je blokirana"}
+{"fingerprint":"gen_category","pattern":"<b>Category:</b>"}
+{"fingerprint":"gen_access_denied","pattern":"Access Denied"}
+{"fingerprint":"gen_forbidden","pattern":"Request forbidden by administrative rules"}
+{"fingerprint":"gen_have_permission","pattern":"have permission to access this resource.</p>"}
+{"fingerprint":"gen_request_rejected","pattern":"<title>Request Rejected</title>"}
+{"fingerprint":"gen_gambling","pattern":"</b> gambling </p>"}
+{"fingerprint":"gen_access_restricted","pattern":"This website access is restricted."}
+{"fingerprint":"gen_web_site_blocked","pattern":"<title>Web Site Blocked</title>"}
+{"fingerprint":"gen_unavailable","pattern":"The site you are accessing belongs to pre-defined category."}
+{"fingerprint":"gen_siteblocked","pattern":"siteBlocked"}
+{"fingerprint":"gen_pre_defined_category","pattern":"Server: V2R2C00-IAE/1.0"}
+{"fingerprint":"gen_blocked_1","pattern":"Acceso Restringido"}
+{"fingerprint":"gen_blocked_2","pattern":"Access forbidden!"}
+{"fingerprint":"gen_blocked_3","pattern":"Acesso Proibido!"}
+{"fingerprint":"gen_blocked_4","pattern":"Esta pÃ¡gina web se ha identificado como potencialmente indeseable."}
+{"fingerprint":"gen_blocked_5","pattern":"Access denied to webpage or website: "}
+{"fingerprint":"gen_blocked_6","pattern":"Web Page Blocked"}
+{"fingerprint":"gen_blocked_7","pattern":"Page Blocked"}
+{"fingerprint":"gen_blocked_8","pattern":"Blocked Page"}
+{"fingerprint":"gen_blocked_9","pattern":"Alert : Your Access Blocked"}
+{"fingerprint":"gen_blocked_10","pattern":"PÃ¡gina web bloqueada"}
+{"fingerprint":"gen_blocked_11","pattern":"APLICACION BLOQUEADA"}
+{"fingerprint":"gen_blocked_12","pattern":"You don%t have permission to access the URL on this server."}
+{"fingerprint":"gen_blocked_13","pattern":"<title>Web Page Blocked!</title>"}
+{"fingerprint":"gen_blocked_14","pattern":"URLBlocked"}
+{"fingerprint":"gen_blocked_15","pattern":"block.html"}
+{"fingerprint":"gen_blocked_16","pattern":"urlblock"}
+{"fingerprint":"gen_blocked_17","pattern":"<title>Web Site Bloqueados</title>"}
+{"fingerprint":"gen_blocked_18","pattern":" <title>You attempted to reach a blocked website!</title>"}
+{"fingerprint":"gen_blocked_19","pattern":"Request unsuccessful."}
+{"fingerprint":"gen_blocked_20","pattern":"<h1>An Error Was Encountered</h1>"}
+{"fingerprint":"gen_blocked_21","pattern":"forbidden-access-black-list"}
+{"fingerprint":"gen_blocked_22","pattern":"Request not allowed"}
+{"fingerprint":"gen_blocked_23","pattern":"<p>Sorry, but the URL you% requesting is prohibited!</p>"}
+{"fingerprint":"gen_blocked_24","pattern":"blockedURL"}
+{"fingerprint":"gen_blocked_25","pattern":"Block policy:"}
+{"fingerprint":"gen_blocked_26","pattern":"Block reason:"}
+{"fingerprint":"gen_blocked_27","pattern":"Access is denied."}
+{"fingerprint":"gen_blocked_28","pattern":"Web Page Blocked"}
+{"fingerprint":"gen_blocked_29","pattern":"Permission denied."}
+{"fingerprint":"gen_blocked_30","pattern":"Request Denied"}
+{"fingerprint":"gen_blocked_31","pattern":"Blocked URL"}
+{"fingerprint":"gen_blocked_32","pattern":"This website is blocked for your safety."}
+{"fingerprint":"gen_blocked_33","pattern":"The website that you are trying to access is unavailable as it contains prohibited material."}
+{"fingerprint":"gen_blocked_34","pattern":"Access to this page has been ordered <big><b>BLOCKED<big></b>"}
+{"fingerprint":"gen_blocked_35","pattern":"Access to this website is prohibited"}
+{"fingerprint":"gen_blocked_36","pattern":"the request has been blocked"}
+{"fingerprint":"gen_blocked_37","pattern":"<title>Blocked</title>"}
+{"fingerprint":"gen_website_filtered","pattern":" <title>Website Filtered</title>"}
+{"fingerprint":"gen_cn_sensitive_keywords","pattern":"当前页面包含敏感关键字词，请与管理员联系!"}
+{"fingerprint":"gen_cn_dangerous_content","pattern":"请求中含有危险内容，已被拦截"}
+{"fingerprint":"gen_cn_illegal_blocking","pattern":"非法阻断"}
+{"fingerprint":"gen_id_forbidden_sites","pattern":"<html><head><title>Situs Terlarang</title></head>"}
+{"fingerprint":"gen_id_prohibited_content","pattern":"Maaf, konten terlarang ini tidak dapat kami tampilkan."}
+{"fingerprint":"gen_403_request_forbidden","pattern":"Error code explanation: 403 = Request forbidden -- authorization will not help."}
+{"fingerprint":"gen_it_avvertenza","pattern":"<title> AVVERTENZA - SITO NON RAGGIUNGIBILE</title>"}
+{"fingerprint":"gen_sk_court_order","pattern":"Táto stránka je na základe príkazu súdu zablokovaná."}
+{"fingerprint":"gen_bg_state_commission","pattern":"Повече информация може да получите на сайта на Държавната комисия"}
+{"fingerprint":"gen_pl_access_denied","pattern":"Odmowa dostÄpu"}
