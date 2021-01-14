@@ -232,11 +232,13 @@ Fetch
 
     :code:`blockpages.json` contains the responses:
 
-    * :code:`ansIP` : String
+    * :code:`ip` : String
         The IP address from an anomalous DNS response.
-    * :code:`HTTP` :
+    * :code:`keyword` : String
+        The domain queried for the anomalous DNS response.
+    * :code:`http` : Object
         HTTP response.
-    * :code:`HTTPS` :
+    * :code:`https` : Object
         HTTPS response.
     * :code:`fetched` : Boolean
         Equals true if page is successfully fetched.
@@ -273,29 +275,28 @@ All files mentioned are under the :code:`rawDir` designated in :code:`config.go`
         * control resolvers (:code:`assets/satellite/control_resolvers.txt`)
         * special resolvers (:code:`assets/satellite/special_resolvers.txt`)
     * output:
-        * answers from control resolvers (:code:`answers_control.json`)
-        * erroneous query responses (:code:`answers_err.json`)
-        * IP list of answers (:code:`answers_ip.json`)
-        * non-erroneous non control resolver answers (:code:`answers.json`)
-        * non-erroneous raw response packets (:code:`answer_raw.json`)
+        * answers from control resolvers (:code:`responses_control.json`)
+        * IP list of answers (:code:`responses_ip.json`)
+        * non control resolver answers (:code:`responses.json`)
+        * raw response packets (:code:`responses_raw.json`)
 * :code:`tag`:  tags resolvers with MaxMind (country) and IPs with censys (certificate, AS number and AS name).
     * input:
         * list of resolvers to query (:code:`resolvers.json`)
-        * list of answered IPs (:code:`answers_ip.json`)
+        * list of answered IPs (:code:`responses_ip.json`)
     * output:
-        * list of tagged IPs with Censys (:code:`tagged_answers.json`)
+        * list of tagged IPs with Censys (:code:`tagged_responses.json`)
         * list of tagged resolvers with Maxmind (:code:`tagged_resolvers.json`)
 * :code:`detect`: detects interference by comparing DNS query responses to control set.
     * input:
-        * :code:`tagged_answers.json`
-        * answers from control resolvers (:code:`answers_control.json`)
+        * :code:`tagged_responses.json`
+        * answers from non control resolvers (:code:`responses.json`)
+        * answers from control resolvers (:code:`responses_control.json`)
         * :code:`assets/satellite/control_resolvers.txt`
     * output:
-        * list of interference result (:code:`interference.json`)
-        * list of tuples where control set have no same queries (:code:`interference_err.json`)
+        * list of interference result (:code:`results.json`)
 * :code:`fetch`: fetches pages hosted on the IPs identified as interference for future blockpage analysis.
     * input:
-        * :code:`interference.json`
+        * :code:`results.json`
     * output:
         * list of tampered IPs, and results of HTTP(S) GET (:code:`blockpages.json`)
 * :code:`stat`:   data analysis.
