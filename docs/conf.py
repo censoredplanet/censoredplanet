@@ -18,8 +18,8 @@
 # -- Project information -----------------------------------------------------
 
 project = 'Censored Planet Observatory'
-copyright = '2020, Ramakrishnan Sundara Raman, Nick Ceccio, Elisa Tsai, Leonid Evdokimov'
-author = 'Ramakrishnan Sundara Raman, Nick Ceccio, Elisa Tsai, Leonid Evdokimov'
+copyright = '2020, Ram Sundara Raman, Nick Ceccio, Elisa Tsai, Leonid Evdokimov, Apurva Virkud, Roya Ensafi'
+author = 'Ram Sundara Raman, Nick Ceccio, Elisa Tsai, Leonid Evdokimov, Apurva Virkud, Roya Ensafi'
 
 # The full version, including alpha/beta/rc tags
 release = '2.0'
@@ -53,3 +53,6 @@ html_theme = 'alabaster'
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = []
+
+# Setting the master doc to index.rst since sphinx is looking for contents.rst by default
+master_doc = 'index'
