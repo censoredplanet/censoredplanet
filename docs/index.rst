@@ -14,6 +14,7 @@ Contents
 .. toctree::
     :maxdepth: 2
    
+    hyperquack
     hyperquackv2
     satellite
     satellitev1
