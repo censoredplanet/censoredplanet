@@ -15,6 +15,8 @@ Contents
     :maxdepth: 2
    
     hyperquackv2
+    satellite
+    satellitev1
 
 ******************
 Indices and tables
