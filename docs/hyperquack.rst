@@ -10,10 +10,10 @@ used for remote censorship detection, you can read the following papers:
 * `HTTP and HTTPS (Hyperquack) <https://censoredplanet.org/assets/filtermap.pdf>`_
 
 *************
-Trial Outputs
+Outputs
 *************
 
-Trial outputs are produced when Hyperquack attempts to measure whether or not
+Outputs are produced when Hyperquack attempts to measure whether or not
 a vantage point observes the blocking of a given keyword by sending one or more
 probes to a vantage point.
 
