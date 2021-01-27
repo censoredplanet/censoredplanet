@@ -146,7 +146,7 @@ Query
 Tag
 ------
 
-1. Tag each answer IP with information from Censys.
+1. Tag each answer IP with information from `Censys <https://about.censys.io/>`_.
 
     :code:`tagged_responses.json` contains the answer IPs and their HTTP, TLS, and AS tags:
 
@@ -246,59 +246,3 @@ Fetch
         The start time of the measurement.
     * :code:`end_time` : String
         The end time of the measurement.
-
-
-*******
-Modules
-*******
-
-This is a brief tour of the modules in satellite.
-
-All files mentioned are under the :code:`rawDir` designated in :code:`config.go`, unless specified.
-
-* :code:`probe`:  probes IPv4 address space for resolvers using zmap.
-    * input: N/A
-    * output:
-        * list of resolver candidates (:code:`resolvers_raw.json`)
-* :code:`filter`: removes resolvers that aren't infrastructure (runs PTR queries on resolvers).
-    * input:
-        * :code:`resolvers_raw.json`
-    * output:
-        * list of filtered public open resolvers (:code:`resolvers.json`)
-        * (:code:`resolvers_ip.json`)
-        * list of PTR query results (:code:`resolvers_PTR.json`)
-        * list of erroneous PTR query results (:code:`resolvers_err.json`)
-* :code:`query`:  queries public open resolvers with a list of domains.
-    * input:
-        * list of resolvers to query (:code:`resolvers.json`)
-        * list of domains for querying (:code:`assets/input_lists/test_domains`)
-        * control resolvers (:code:`assets/satellite/control_resolvers.txt`)
-        * special resolvers (:code:`assets/satellite/special_resolvers.txt`)
-    * output:
-        * answers from control resolvers (:code:`responses_control.json`)
-        * IP list of answers (:code:`responses_ip.json`)
-        * non control resolver answers (:code:`responses.json`)
-        * raw response packets (:code:`responses_raw.json`)
-* :code:`tag`:  tags resolvers with MaxMind (country) and IPs with censys (certificate, AS number and AS name).
-    * input:
-        * list of resolvers to query (:code:`resolvers.json`)
-        * list of answered IPs (:code:`responses_ip.json`)
-    * output:
-        * list of tagged IPs with Censys (:code:`tagged_responses.json`)
-        * list of tagged resolvers with Maxmind (:code:`tagged_resolvers.json`)
-* :code:`detect`: detects interference by comparing DNS query responses to control set.
-    * input:
-        * :code:`tagged_responses.json`
-        * answers from non control resolvers (:code:`responses.json`)
-        * answers from control resolvers (:code:`responses_control.json`)
-        * :code:`assets/satellite/control_resolvers.txt`
-    * output:
-        * list of interference result (:code:`results.json`)
-* :code:`fetch`: fetches pages hosted on the IPs identified as interference for future blockpage analysis.
-    * input:
-        * :code:`results.json`
-    * output:
-        * list of tampered IPs, and results of HTTP(S) GET (:code:`blockpages.json`)
-* :code:`stat`:   data analysis.
-* :code:`full`:   all aforementioned modules combined.
-* :code:`upload`

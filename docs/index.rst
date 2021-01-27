@@ -15,7 +15,7 @@ Contents
     :maxdepth: 2
    
     hyperquackv2
-    satellite
+    satellitev2
     satellitev1
 
 ******************
