@@ -16,8 +16,8 @@ Contents
    
     hyperquackv1
     hyperquackv2
-    satellitev2
     satellitev1
+    satellitev2
 
 ******************
 Indices and tables

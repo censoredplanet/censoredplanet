@@ -233,9 +233,9 @@ Notes
 While Satellite-v1 includes multiple control resolvers intended to avoid false inferences there is still a 
 possibility that certain measurements are marked as anomalies incorrectly. To confirm censorship, it is
 recommended that the raw DNS responses are compared to known blockpage fingerprints. The blockpage fingerprints
-currently recorded by Censored Planet are available here <https://assets.censoredplanet.org/blockpage_signatures.json>.
+currently recorded by Censored Planet are available `here <https://assets.censoredplanet.org/blockpage_signatures.json>`_.
 Moreover, aggregations can be used to avoid anomalous vantage points and domains.  
-Please refer to our sample analysis scripts <https://github.com/censoredplanet/censoredplanet> for a guide on processing 
+Please refer to our sample `analysis scripts <https://github.com/censoredplanet/censoredplanet>`_ for a guide on processing 
 the data. 
 
 Censored Planet detects network interference of websites using remote measurements to infrastructural vantage points 
