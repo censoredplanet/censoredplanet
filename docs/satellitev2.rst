@@ -1,5 +1,5 @@
 ############
-Satellite
+Satellite-v2
 ############
 Satellite is Censored Planet's tool to detect DNS interference. Refer to the following papers for more details:
 
@@ -31,7 +31,7 @@ The detect module is the module that provides final output. It has two output fi
 * :code:`answers` : JSON object
     The resolver's returned answer IPs for the queried domain are the keys. Each answer IP is mapped to an array of its tags that matched the control tags - if the IP is in the control set, "ip" is appended and if the IP has no tags, "no_tags" is appended.
 * :code:`passed` : Boolean
-    Equals true if interference is not detected.
+    Equals true if interference is not detected. Note that if this field is set to false, it may indicate either DNS interference, or an unexpected answer for the resolution. Further manual confirmation is required to confirm censorship.
 * :code:`startTime` : String
     The start time of the measurement.
 * :code:`endTime` : String
@@ -51,7 +51,7 @@ The detect module is the module that provides final output. It has two output fi
 Modules
 *******
 
-This is a brief tour of the modules in satellite.
+This is a brief tour of the modules in Satellite-v2.
 
 All files mentioned are under the :code:`rawDir` designated in :code:`config.go`, unless specified.
 
@@ -102,3 +102,19 @@ All files mentioned are under the :code:`rawDir` designated in :code:`config.go`
 * :code:`stat`:   data analysis.
 * :code:`full`:   all aforementioned modules combined.
 * :code:`upload`
+
+*************
+Notes
+*************
+While Satellite-v2 includes multiple control resolvers intended to avoid false inferences there is still a 
+possibility that certain measurements are marked as anomalies incorrectly. To confirm censorship, it is
+recommended that the raw DNS responses are compared to known blockpage fingerprints. The blockpage fingerprints
+currently recorded by Censored Planet are available here <https://assets.censoredplanet.org/blockpage_signatures.json>.
+Moreover, aggregations can be used to avoid anomalous vantage points and domains.  
+Please refer to our sample analysis scripts <https://github.com/censoredplanet/censoredplanet> for a guide on processing 
+the data. 
+
+Censored Planet detects network interference of websites using remote measurements to infrastructural vantage points 
+within networks (eg. institutions). Note that this raw data cannot determine the entity responsible for the blocking 
+or the intent behind it. Please exercise caution when using the data, and reach out to us at `censoredplanet@umich.edu` 
+if you have any questions.

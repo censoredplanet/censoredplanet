@@ -1,12 +1,12 @@
 ############
-Satellite v1
+Satellite-v1
 ############
 Satellite is Censored Planet's tool to detect DNS interference. Refer to the following papers for more details:
 
 * `Global Measurement of DNS Manipulation <https://censoredplanet.org/assets/Pearce2017b.pdf>`_
 * `Satellite: Joint Analysis of CDNs and Network-Level Interference <https://censoredplanet.org/assets/Scott2016a.pdf>`_
 
-Satellite v1 corresponds to measurements from 2018 to December 2020. See Satellite v2 for documentation on measurements taken after this date.
+Satellite-v1 corresponds to measurements from 2018 to February 2021. See Satellite v2 for documentation on measurements taken after this date.
 
 The published data has the following directory structure: ::
 
@@ -122,7 +122,7 @@ Query
 
 		* "no_answer" appears in the :code:`error` field if no A resource records (IPs) are returned - this includes the :code:`NXDOMAIN` response.
 
-		* Responses with :code:`NXDOMAIN` or other errors may indicate censorship. However, these cases are not analyzed further in Satellite v1. 
+		* Responses with :code:`NXDOMAIN` or other errors may indicate censorship. However, these cases are not analyzed further in Satellite-v1. 
 
 	:code:`answers_raw.json` contains raw responses from successful queries:
 
@@ -216,7 +216,7 @@ Detect
 	* :code:`answers` : JSON object
 	    The resolver's returned answer IPs for the queried domain are the keys. Each answer IP is mapped to an array of its tags that matched the control tags - if the IP is in the control set, "ip" is appended and if the IP has no tags, "no_tags" is appended.
 	* :code:`passed` : Boolean
-	    Equals true if interference is not detected.
+	    Equals true if interference is not detected. Note that if this field is set to false, it may indicate either DNS interference, or an unexpected answer for the resolution. Further manual confirmation is required to confirm censorship.
 
 	**Note:**
 
@@ -224,4 +224,21 @@ Detect
 
 		* Cases where the control answer IPs have no tags will be considered interference if the resolver's answer IPs are not in the control set.
 
-		* Satellite v1 anomalies (interference detected) need to be explicitly confirmed by fetching pages hosted at the resolved IPs in post-processing. This functionality is included in Satellite v2.
+		* Satellite-v1 anomalies (interference detected) need to be explicitly confirmed by fetching pages hosted at the resolved IPs in post-processing. This functionality is included by default in Satellite v2.
+
+
+*************
+Notes
+*************
+While Satellite-v1 includes multiple control resolvers intended to avoid false inferences there is still a 
+possibility that certain measurements are marked as anomalies incorrectly. To confirm censorship, it is
+recommended that the raw DNS responses are compared to known blockpage fingerprints. The blockpage fingerprints
+currently recorded by Censored Planet are available here <https://assets.censoredplanet.org/blockpage_signatures.json>.
+Moreover, aggregations can be used to avoid anomalous vantage points and domains.  
+Please refer to our sample analysis scripts <https://github.com/censoredplanet/censoredplanet> for a guide on processing 
+the data. 
+
+Censored Planet detects network interference of websites using remote measurements to infrastructural vantage points 
+within networks (eg. institutions). Note that this raw data cannot determine the entity responsible for the blocking 
+or the intent behind it. Please exercise caution when using the data, and reach out to us at `censoredplanet@umich.edu` 
+if you have any questions.
