@@ -1,3 +1,5 @@
+//Copyright 2020 Censored Planet
+
 package main
 
 import (
@@ -89,23 +91,35 @@ func main() {
 		log.Fatal("Input file not found")
 	}
 	filename := parts[len(parts)-1]
+	//Compile regex for filename from Censored Planet website
 	r := regexp.MustCompile("CP_[a-zA-Z]+-[a-zA-Z]+-20[1-3][0-9]-[0-1][0-9]-[0-3][0-9]-[0-2][0-9]-[0-5][0-9]-[0-5][0-9].tar.gz")
 	if !r.MatchString(filename) {
 		log.Fatal("Input file does not match expected file name pattern. Please use same file name pattern as in the censoredplanet.org website")
 	}
 
+	//Extract the scan technique and scan date
 	technique := strings.ToLower(strings.Split(filename, "-")[1])
 	scandate := strings.Split(filename, "-")[2] + strings.Split(filename, "-")[3] + strings.Split(filename, "-")[4]
 
+	//Should this scan be skipped?
 	if skip := ReadSkipScanDates("https://assets.censoredplanet.org/avoid_scandates.txt", technique, scandate); skip == true {
 		log.Fatal("This scan is in the do-not-include list.")
 	}
 
+	//Initialize maxmind
 	log.Info("Input File okay!")
 	err := geolocate.Initialize(f.mmdbFile)
 	if err != nil {
 		log.Fatal("Could not initialize Maxmind DB: ", err.Error())
 	}
 	log.Info("Maxmind init success")
-	hquack.AnalyzeHquack(f.inputFile, f.outputFile, technique)
+
+	//Start analysis
+	if technique == "echo" || technique == "discard" || technique == "http" || technique == "https" {
+		hquack.AnalyzeHquack(f.inputFile, f.outputFile, technique)
+	} else if technique == "satellite" {
+		log.Fatal("Support for Satellite analysis is coming soon")
+	} else {
+		log.Fatal("Unsupported technique for analysis")
+	}
 }

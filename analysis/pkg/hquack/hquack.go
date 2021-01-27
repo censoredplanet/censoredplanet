@@ -24,14 +24,15 @@ var analysisType string
 //Different error types for interference in application layer.
 //TODO: Need to update error codes that appear less frequently
 var resetError = regexp.MustCompile("connection reset by peer|EOF")
-var timeoutError = regexp.MustCompile("Client.Timeout")
-var blockpageError = regexp.MustCompile("Incorrect web response")
+var timeoutError = regexp.MustCompile("Client.Timeout|i/o timeout")
+var blockpageError = regexp.MustCompile("Incorrect web response|Incorrect echo response|Received response")
 
 //For now, we are not confirmng any other error responses, as they need to be checked in a more case-by-case basis. They will be counted as anomalies.
-//var otherError = regexp.MustCompile("response missing Location header|malformed HTTP status code")
+//var otherError = regexp.MustCompile("response missing Location header|malformed HTTP status code|malformed HTTP response|bad Content-Length|malformed MIME header line|malformed HTTP version|failed to parse Location header")
 
 //These error types indicate network errors.
-var filterError = regexp.MustCompile("too many open files|address already in use|no route to host|connection refused|connect: network is unreachable|connect: connection timed out|getsockopt: network is unreachable|remote error: internal error|trailer header without chunked transfer encoding|remote error: bad record MAC|remote error: handshake failure|remote error: alert(112)|local error:")
+//TODO: Need to update tls errors
+var filterError = regexp.MustCompile("dial|too many open files|address already in use|no route to host|connection refused|network is unreachable|connection timed out|network is unreachable|remote error: internal error|trailer header without chunked transfer encoding|remote error: bad record MAC|remote error: handshake failure|remote error: alert(112)|local error:|context deadline exceeded|protocol not available|protocol error")
 
 //analyses stores the format for user prompt
 type analyses struct {
