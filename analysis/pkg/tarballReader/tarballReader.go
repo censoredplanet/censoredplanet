@@ -1,4 +1,4 @@
-//Copyright 2020 Censored Planet
+//Copyright 2021 Censored Planet
 
 //Package tarballReader tar.gz raw data files that are published on the Censored Planet website.
 package tarballReader
