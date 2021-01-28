@@ -1,4 +1,4 @@
-//Copyright 2020 Censored Planet
+//Copyright 2021 Censored Planet
 
 // Package hquack contains analysis scripts for quack and hyperquack protocols
 package hquack

@@ -1,4 +1,4 @@
-//Copyright 2020 Censored Planet
+//Copyright 2021 Censored Planet
 
 package main
 
