@@ -16,7 +16,7 @@ Contents
    
     hyperquack
     hyperquackv2
-    satellite
+    satellitev2
     satellitev1
 
 ******************
