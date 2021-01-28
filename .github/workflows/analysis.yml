@@ -23,10 +23,11 @@ jobs:
         cd analysis/
         mkdir -p bin
         cd cmd/
-	      go get
+        go get
         go vet
         cd ../
-	      go build -o bin/analyze-cp cmd/analyze-cp.go 
+        go build -o bin/analyze-cp cmd/analyze-cp.go 
+    
     - name: Upload binary
       uses: actions/upload-artifact@v1
       with:
