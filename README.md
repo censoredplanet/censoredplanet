@@ -1,4 +1,7 @@
 # Censored Planet Observatory 
+[![Documentation Status](https://readthedocs.org/projects/censoredplanet/badge/?version=latest)](https://censoredplanet.readthedocs.io/en/latest/?badge=latest)
+[![analyze-cp Build Status](https://github.com/censoredplanet/censoredplanet/workflows/analyze-cp/badge.svg)](https://github.com/censoredplanet/censoredplanet/actions)
+
 
 This respository contains documentation about the raw data from the [Censored Planet Observatory](https://censoredplanet.org/data/raw) and includes code to analyze the data and run several useful observations. 
 

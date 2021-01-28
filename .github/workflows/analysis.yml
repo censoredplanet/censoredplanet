@@ -1,0 +1,30 @@
+---
+name: analyze-cp
+
+on:
+ push:
+   paths:
+   - 'analysis/**'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - uses: actions/setup-go@v2
+      with:
+        go-version: '1.15'
+
+    # TODO: `go vet` && `go fmt`
+
+    - name: Build the analysis pipeline
+      run: |
+        cd analysis/
+        make
+    - name: Upload binary
+      uses: actions/upload-artifact@v1
+      with:
+        name: analyze-cp
+        path: analysis/bin/analyze-cp
+...
