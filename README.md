@@ -21,7 +21,7 @@ This respository contains documentation about the raw data from the [Censored Pl
 
 
 ## Documentation 
-The documentation is available in the `docs` directory and it is hosted on readthedocs at `https://censoredplanet.readthedocs.io`. 
+The documentation is available in the `docs` directory and it is hosted [here](https://censoredplanet.readthedocs.io). 
 
 Before generating the document, you must run `pip install sphinx`.
 
