@@ -14,10 +14,10 @@ Contents
 .. toctree::
     :maxdepth: 2
    
-    hyperquack
+    hyperquackv1
     hyperquackv2
-    satellitev2
     satellitev1
+    satellitev2
 
 ******************
 Indices and tables

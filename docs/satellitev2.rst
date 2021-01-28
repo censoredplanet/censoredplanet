@@ -1,5 +1,5 @@
 ############
-Satellite v2
+Satellite-v2
 ############
 Satellite is Censored Planet's tool to detect DNS interference. Refer to the following papers for more details:
 
@@ -246,3 +246,19 @@ Fetch
         The start time of the measurement.
     * :code:`end_time` : String
         The end time of the measurement.
+        
+*************
+Notes
+*************
+While Satellite-v2 includes multiple control resolvers intended to avoid false inferences there is still a 
+possibility that certain measurements are marked as anomalies incorrectly. To confirm censorship, it is
+recommended that the raw DNS responses are compared to known blockpage fingerprints. The blockpage fingerprints
+currently recorded by Censored Planet are available `here <https://assets.censoredplanet.org/blockpage_signatures.json>`_.
+Moreover, aggregations can be used to avoid anomalous vantage points and domains.  
+Please refer to our sample `analysis scripts <https://github.com/censoredplanet/censoredplanet>`_ for a guide on processing 
+the data. 
+
+Censored Planet detects network interference of websites using remote measurements to infrastructural vantage points 
+within networks (eg. institutions). Note that this raw data cannot determine the entity responsible for the blocking 
+or the intent behind it. Please exercise caution when using the data, and reach out to us at `censoredplanet@umich.edu` 
+if you have any questions.
