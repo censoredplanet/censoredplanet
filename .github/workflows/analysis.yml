@@ -20,13 +20,10 @@ jobs:
 
     - name: Build the analysis pipeline
       run: |
-        cd analysis/
-        mkdir -p bin
-        cd cmd/
-        go get
-        go vet
-        cd ../
-        go build -o bin/analyze-cp cmd/analyze-cp.go 
+        mkdir -p ~/go/src/github.com/censoredplanet
+        ln -s ~/work/censoredplanet/censoredplanet ~/go/src/github.com/censoredplanet/censoredplanet
+        cd ~/go/src/github.com/censoredplanet/censoredplanet/analysis
+        make
     
     - name: Upload binary
       uses: actions/upload-artifact@v1
