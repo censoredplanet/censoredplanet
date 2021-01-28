@@ -1,5 +1,5 @@
 //Copyright 2021 Censored Planet
-
+//analyze-cp provides example analysis for Censored Planet public raw data. 
 package main
 
 import (
