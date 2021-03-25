@@ -26,14 +26,14 @@ The published data has the following directory structure: ::
         |-- results_verified.json
         |-- tagged_responses.json
         |-- tagged_resolvers.json
-        
+
 ------
 Probe
 ------
 
 1. Generate a DNS A query packet for a controlled domain (`dns.pkt`).
 
-2. Perform a `ZMap <https://github.com/zmap/zmap>` (Internet-wide) scan with the probe packet for open DNS resolvers.
+2. Perform a `ZMap <https://github.com/zmap/zmap>`_ (Internet-wide) scan with the probe packet for open DNS resolvers.
 
     :code:`resolvers_raw.json` contains the ZMap output:
 
