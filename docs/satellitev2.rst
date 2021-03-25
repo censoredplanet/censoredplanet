@@ -23,23 +23,17 @@ The published data has the following directory structure: ::
         |-- responses.json
         |-- responses_raw.json
         |-- results.json
+        |-- results_verified.json
         |-- tagged_responses.json
         |-- tagged_resolvers.json
-
-
-*******
-Output
-*******
-
-The relevant output is located in the `raw/` directory.
-
+        
 ------
 Probe
 ------
 
 1. Generate a DNS A query packet for a controlled domain (`dns.pkt`).
 
-2. Perform a ZMap scan with the probe packet for open DNS resolvers.
+2. Perform a `ZMap <https://github.com/zmap/zmap>` (Internet-wide) scan with the probe packet for open DNS resolvers.
 
     :code:`resolvers_raw.json` contains the ZMap output:
 
@@ -103,7 +97,7 @@ Query
 
     **Note:**
 
-        * The query for the test domain is attempted up to four times in case of non Type A response. To check the status of the resolver, a control domain is queried before and after the queries for the test domain.
+        * NEW: The query for the test domain is attempted up to four times in case of non Type A response. To check the status of the resolver, a control domain is queried before and after the queries for the test domain.
 
 2. Parse and separate responses from control resolvers and non-control resolvers.
 
@@ -203,7 +197,7 @@ Detect
     * :code:`connect_error` : Boolean
         Equals true if all test domain query attempts returned errors.
     * :code:`anomaly` : Boolean
-        Equals true if an anomaly is detected.
+        Equals true if an anomaly is detected. In case there are no tags for the answers, then this field is conservatively marked as false. 
     * :code:`start_time` : String
         The start time of the measurement.
     * :code:`end_time` : String
@@ -221,8 +215,6 @@ Detect
     **Note:**
 
         * For each response, the answer IPs and their tags are compared to the set of answer IPs and tags from all the control resolvers for the same query domain. A response is classified as an anomaly if there is no overlap between the two.
-
-        * Cases where the control answer IPs have no tags will be considered anomalies if the resolver's answer IPs are not in the control set.
 
 ------
 Fetch
@@ -246,7 +238,31 @@ Fetch
         The start time of the measurement.
     * :code:`end_time` : String
         The end time of the measurement.
+
+------
+Verify
+------
+
+1. New hueristics to exclude possible cases of erroneous answers from resolvers. Currently, verify excludes answer IPs that are part of big CDNs (Note: this could lead to false negatives) and answer IPs that appear for a low number of domains (<=2). 
+    :code:`results_verified.json` contains only the rows that were earlier marked as anomalies:
+
+    * :code:`vp` : String
+        The IP address of the vantage point (a DNS resolver).
+    * :code:`location`: JSON object
+        * :code:`country_name` : String
+            The full name of the country where the resolver is located.
+        * :code:`country_code` : String
+            The two-letter ISO 3166 code of the country where the resolver is located.
+    * :code:`test_url` : String
+        The domain being queried.
+    * :code:`response` : JSON object
+        The resolver's returned answer IPs for the queried domain are the keys. Each answer IP is mapped to an array of its tags that matched the control tags - if the IP is in the control set, "ip" is appended and if the IP has no tags, "no_tags" is appended. Also has an :code:`rcode` field mapping to a list of response codes for the trials.
+    * :code:`excluded` : Boolean
+        Should this observation be excluded from being counted as an anomaly?
+    * :code:`exclude_reason` : String Array
+        If observation should be excluded, why? (eg. "is_CDN")
         
+
 *************
 Notes
 *************
