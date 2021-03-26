@@ -197,7 +197,7 @@ Detect
     * :code:`connect_error` : Boolean
         Equals true if all test domain query attempts returned errors.
     * :code:`anomaly` : Boolean
-        Equals true if an anomaly is detected. In case there are no tags for the answers, then this field is conservatively marked as false. 
+        Equals true if an anomaly is detected. In case there are no tags for the answers or control, then this field is conservatively marked as false. 
     * :code:`start_time` : String
         The start time of the measurement.
     * :code:`end_time` : String
