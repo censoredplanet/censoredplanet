@@ -1,5 +1,5 @@
 //Copyright 2021 Censored Planet
-//analyze-cp provides example analysis for Censored Planet public raw data. 
+//analyze-cp provides example analysis for Censored Planet public raw data.
 package main
 
 import (
@@ -16,15 +16,15 @@ import (
 
 //Flags stores values from user-entered command line flags
 type Flags struct {
-	inputFile         string
-	outputFile        string
-	blockpageFile     string
-	falsePositiveFile string
+	inputFile           string
+	outputFile          string
+	blockpageFile       string
+	falsePositiveFile   string
 	satellitev1HtmlFile string
-	skipDatesFile     string
-	mmdbFile          string
-	logLevel          uint
-	logFileFlag       string
+	skipDatesFile       string
+	mmdbFile            string
+	logLevel            uint
+	logFileFlag         string
 }
 
 //ReadSkipScanDates checkes whether the current scandate of the file matches any of the scandates to skip analysis
@@ -104,7 +104,7 @@ func main() {
 	technique := strings.ToLower(strings.Split(strings.Split(filename, "-")[0], "_")[1])
 	protocol := ""
 	scandate := ""
-	if technique == "quack"{
+	if technique == "quack" {
 		protocol = strings.ToLower(strings.Split(filename, "-")[1])
 		scandate = strings.Split(filename, "-")[2] + strings.Split(filename, "-")[3] + strings.Split(filename, "-")[4]
 	} else if technique == "satellite" {
@@ -116,7 +116,7 @@ func main() {
 	//Should this scan be skipped?
 	if skip := ReadSkipScanDates("https://assets.censoredplanet.org/avoid_scandates.txt", technique, scandate); skip == true {
 		log.Fatal("This scan is in the do-not-include list.")
-	} 
+	}
 
 	//Initialize maxmind
 	log.Info("Input File okay!")
@@ -134,5 +134,5 @@ func main() {
 			log.Fatal("Satellitev2 support is not provided yet")
 		}
 		satellite.AnalyzeSatellite(f.inputFile, f.outputFile, f.satellitev1HtmlFile)
-	} 
+	}
 }

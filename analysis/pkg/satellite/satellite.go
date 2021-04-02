@@ -10,18 +10,17 @@ import (
 	"strings"
 
 	//"github.com/censoredplanet/censoredplanet/analysis/pkg/geolocate"
-	"github.com/censoredplanet/censoredplanet/analysis/pkg/tarballReader"
 	"github.com/censoredplanet/censoredplanet/analysis/pkg/hquack"
+	"github.com/censoredplanet/censoredplanet/analysis/pkg/tarballReader"
 	"github.com/cheggaaa/pb/v3"
+	set "github.com/deckarep/golang-set"
 	"github.com/manifoldco/promptui"
 	log "github.com/sirupsen/logrus"
 	"github.com/trustmaster/goflow"
-	set "github.com/deckarep/golang-set"
 )
 
-
 //Big CDNs regex
-var cdnRegex = regexp.MustCompile("AMAZON|Akamai|OPENDNS|CLOUDFLARENET|GOOGLE") 
+var cdnRegex = regexp.MustCompile("AMAZON|Akamai|OPENDNS|CLOUDFLARENET|GOOGLE")
 
 //analyses stores the format for user prompt
 type analyses struct {
@@ -70,9 +69,9 @@ func (m *MetaData) Process() {
 
 //Filter is the component for marking untagged measurements
 type Filter struct {
-	InFilterData  <-chan map[string]interface{}
+	InFilterData   <-chan map[string]interface{}
 	ControlAnswers <-chan map[string]*tagsSet
-	OutFilterData chan<- map[string]interface{}
+	OutFilterData  chan<- map[string]interface{}
 }
 
 //Process marks untagged measurements
@@ -88,7 +87,7 @@ func (f *Filter) Process() {
 		if numControlTags == 0 {
 			UntaggedAnswer = true
 		}
-		
+
 		answersMap := data["answers"].(map[string]interface{})
 		flag := true
 		for _, answers := range answersMap {
@@ -112,12 +111,11 @@ func (f *Filter) Process() {
 
 //Fetch is the component for applying blockpage and unexpected responses regex matching
 type Fetch struct {
-	InFetchData <-chan map[string]interface{}
+	InFetchData         <-chan map[string]interface{}
 	InBlockpageData     <-chan map[string]*regexp.Regexp
 	InFalsePositiveData <-chan map[string]*regexp.Regexp
-	HTMLPages 				<-chan map[string]string
-	OutFetchData 		chan<- map[string]interface{}
-
+	HTMLPages           <-chan map[string]string
+	OutFetchData        chan<- map[string]interface{}
 }
 
 //Process applies blockpage and unexpected responses regex matching
@@ -138,7 +136,7 @@ func (f *Fetch) Process() {
 	for data := range f.InFetchData {
 		fetched := false
 		if len(html) != 0 {
-			
+
 			fetched = true
 			var confirmed string
 			var fingerprint string
@@ -175,7 +173,7 @@ func (f *Fetch) Process() {
 //Verify is the component for applying post procesing hueristics to avoid false positives
 type Verify struct {
 	InVerifyData  <-chan map[string]interface{}
-	CDNIPs <-chan set.Set
+	CDNIPs        <-chan set.Set
 	OutVerifyData chan<- map[string]interface{}
 }
 
@@ -211,11 +209,10 @@ func (a *Analysis) Process() {
 			a.OutAnalysisData <- map[string]interface{}{"Query": data["query"], "Anomaly": (!(data["passed"].(bool)) && !(data["BelongsToCDN"].(bool)) && !(data["UntaggedAnswer"].(bool))), "Fetched": data["Fetched"], "Confirmed": data["Confirmed"], "Country": data["Geolocation"]}
 		} else if analysisType == "Vantage Point" {
 			a.OutAnalysisData <- map[string]interface{}{"Resolver": data["resolver"], "Anomaly": (!(data["passed"].(bool)) && !(data["BelongsToCDN"].(bool)) && !(data["UntaggedAnswer"].(bool))), "Fetched": data["Fetched"], "Confirmed": data["Confirmed"], "Country": data["Geolocation"]}
-		} 
+		}
 	}
 
 }
-
 
 //ProcessLine constructs the directed cyclic graph that handles data flow between different components.
 func ProcessLine() *goflow.Graph {
@@ -228,7 +225,6 @@ func ProcessLine() *goflow.Graph {
 	network.Add("verify", new(Verify))
 	network.Add("fetch", new(Fetch))
 	network.Add("analysis", new(Analysis))
-
 
 	// Connect them with a channel
 	network.Connect("parse", "ResJSONData", "metadata", "InMetaData")
@@ -244,7 +240,7 @@ func ProcessLine() *goflow.Graph {
 	network.MapInPort("FalsePositiveInput", "fetch", "InFalsePositiveData")
 	network.MapInPort("HTMLInput", "fetch", "HTMLPages")
 	network.MapInPort("CDNIPInput", "verify", "CDNIPs")
-	network.MapInPort("AnalysisType","analysis","InAnalysisType")
+	network.MapInPort("AnalysisType", "analysis", "InAnalysisType")
 
 	//Map the output ports for the network
 	network.MapOutPort("ProcessingOutput", "analysis", "OutAnalysisData")
@@ -332,7 +328,7 @@ func AnalyzeSatellite(inputFile string, outputFile string, satellitev1HtmlFile s
 	}
 	defer fileReader.Close()
 
-	//Read the Tar file and get the required files 
+	//Read the Tar file and get the required files
 	//TODO: Read more than one tar file for files in 2020
 	interferenceFileBytes, err := tarballReader.ReadTarball(fileReader, "interference.json")
 	if err != nil {

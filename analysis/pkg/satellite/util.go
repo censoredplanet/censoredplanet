@@ -4,15 +4,14 @@
 package satellite
 
 import (
-	"strings"
-	"os"
-	"encoding/json"
-	"regexp"
 	"bufio"
+	"encoding/json"
 	"github.com/censoredplanet/censoredplanet/analysis/pkg/tarballReader"
-	set "github.com/deckarep/golang-set"	
+	set "github.com/deckarep/golang-set"
 	log "github.com/sirupsen/logrus"
-	
+	"os"
+	"regexp"
+	"strings"
 )
 
 type tags struct {
@@ -109,7 +108,7 @@ func loadControls(inputFile string, ansTags map[string]*tags) map[string]*tagsSe
 	log.Info("Control Answers File read")
 	controlAnswersFileText := string(controlAnswersFileBytes)
 	controlAnswersTextLines := strings.Split(controlAnswersFileText, "\n")
-	log.Info("Number of lines in Control Answers file: ", len(controlAnswersTextLines))	
+	log.Info("Number of lines in Control Answers file: ", len(controlAnswersTextLines))
 	controls := make(map[string]*tagsSet)
 	for _, line := range controlAnswersTextLines {
 		var jsonData map[string]interface{}
@@ -163,7 +162,7 @@ func loadGeolocation(inputFile string) map[string]string {
 	log.Info("Tagged resolvers File read")
 	taggedResolversFileText := string(taggedResolversFileBytes)
 	taggedResolversTextLines := strings.Split(taggedResolversFileText, "\n")
-	log.Info("Number of lines in Tagged resolvers file: ", len(taggedResolversTextLines))	
+	log.Info("Number of lines in Tagged resolvers file: ", len(taggedResolversTextLines))
 	geolocation := make(map[string]string)
 	for _, line := range taggedResolversTextLines {
 		var jsonData map[string]interface{}
