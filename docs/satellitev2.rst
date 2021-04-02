@@ -9,23 +9,21 @@ Satellite is Censored Planet's tool to detect DNS interference. Refer to the fol
 The published data has the following directory structure: ::
 
     CP_Satellite-YYYY-MM-DD-HH-MM-SS/
-    |-- log.json
-    |-- raw/
-        |-- blockpages.json
-        |-- dns.pkt
-        |-- resolvers_err.json
-        |-- resolvers_ip.json
-        |-- resolvers.json
-        |-- resolvers_ptr.json
-        |-- resolvers_raw.json
-        |-- responses_control.json
-        |-- responses_ip.json
-        |-- responses.json
-        |-- responses_raw.json
-        |-- results.json
-        |-- results_verified.json
-        |-- tagged_responses.json
-        |-- tagged_resolvers.json
+    |-- blockpages.json
+    |-- dns.pkt
+    |-- resolvers_err.json
+    |-- resolvers_ip.json
+    |-- resolvers.json
+    |-- resolvers_ptr.json
+    |-- resolvers_raw.json
+    |-- responses_control.json
+    |-- responses_ip.json
+    |-- responses.json
+    |-- responses_raw.json
+    |-- results.json
+    |-- results_verified.json
+    |-- tagged_responses.json
+    |-- tagged_resolvers.json
 
 ------
 Probe

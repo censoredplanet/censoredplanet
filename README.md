@@ -6,7 +6,7 @@
 This respository contains documentation about the raw data from the [Censored Planet Observatory](https://censoredplanet.org/data/raw) and includes code to analyze the data and run several useful observations. 
 
 ## Analysis (analyze-cp)
- Example analysis tool to parse the raw data files on the [Censored Planet Observatory Website](https://censoredplanet.org/data/raw). Currently, only analysis for `quack-v1` and `hyperquack-v1` data is supported. `satellite-v1` support is coming soon. The analysis tool converts raw data into digestible CSV files that contain aggregates of data at the country level. User is prompted to choose the type of output. 
+ Example analysis tool to parse the raw data files on the [Censored Planet Observatory Website](https://censoredplanet.org/data/raw). Currently, only analysis for `quack-v1`, `hyperquack-v1`, and `satellite-v1` data is supported. `v2` support is coming soon. The analysis tool converts raw data into digestible CSV files that contain aggregates of data at the country level. User is prompted to choose the type of output. 
 
  `analyze-cp` can be compiled using the makefile in the `analysis` directory or by using `go build` in `analysis/cmd/`. `analysis-cp` needs two REQUIRED inputs (tar.gz file downloaded from [Censored Planet Observatory Website](https://censoredplanet.org/data/raw) and Maxmind GeoLite2-City.mmdb file downloaded from the [Maxmind Website](https://maxmind.com)). 
 
@@ -15,10 +15,10 @@ This respository contains documentation about the raw data from the [Censored Pl
 --input-file, REQUIRED, "Input tar.gz file (downloaded from censoredplanet.org)"
 --output-file, Default - output.csv, "Output CSV file"
 --mmdb-file, REQUIRED,  "Maxmind Geolocation MMDB file (Download from maxmind.com)"
+--satellitev1-html-file, OPTIONAL, Default - "", "JSON file that contains HTML responses for detecting blockpages from satellitev1 resolved IP addresses. The JSON file should have the following fields: 1) ip (resolved ip from satellitev1 that is marked as an anomaly), query (query performed by satellitev1), body (HTML body). If unspecified, the blockpage matching process will be skipped."
 --log-file, Default - '-'(STDERR), "file name for logging"
 --verbosity, Default - 3, "level of log detail (increasing from 0-5)"
  ```
-
 
 ## Documentation 
 The documentation is available in the `docs` directory and it is hosted [here](https://censoredplanet.readthedocs.io). 

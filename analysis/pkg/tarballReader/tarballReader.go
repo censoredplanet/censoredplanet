@@ -15,9 +15,9 @@ import (
 )
 
 //ReadTarball reads the tar.gz file and sends back the file bytes
-//Input - tar.gz file reader
+//Input - tar.gz file , Filename
 //Output - File byte stream, error
-func ReadTarball(reader io.Reader) ([]byte, error) {
+func ReadTarball(reader io.Reader, filename string) ([]byte, error) {
 	gzr, err := gzip.NewReader(reader)
 	if err != nil {
 		return nil, err
@@ -28,12 +28,12 @@ func ReadTarball(reader io.Reader) ([]byte, error) {
 	for {
 		hdr, err := tr.Next()
 		if err == io.EOF {
-			return nil, errors.New("Results file not found")
+			return nil, errors.New("File not found")
 		}
 		if err != nil {
 			return nil, err
 		}
-		if strings.Contains(hdr.Name, "results.json") {
+		if strings.Contains(hdr.Name, filename) {
 			bar := pb.New(int(hdr.Size))
 			bar.Start()
 			barReader := bar.NewProxyReader(tr)
@@ -45,5 +45,4 @@ func ReadTarball(reader io.Reader) ([]byte, error) {
 			return bs, nil
 		}
 	}
-
 }

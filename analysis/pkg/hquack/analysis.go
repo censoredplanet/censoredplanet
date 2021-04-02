@@ -22,7 +22,7 @@ func Analyze(data []map[string]interface{}, analysisType string) map[string]map[
 			if _, ok := dataMap[result["Country"].(string)][result["Keyword"].(string)]["Anomalies"]; !ok {
 				dataMap[result["Country"].(string)][result["Keyword"].(string)]["Anomalies"] = 0
 			}
-			if _, ok := dataMap[result["Country"].(string)][result["Keyword"].(string)]["Confirmed"]; !ok {
+			if _, ok := dataMap[result["Country"].(string)][result["Keyword"].(string)]["Confirmations"]; !ok {
 				dataMap[result["Country"].(string)][result["Keyword"].(string)]["Confirmations"] = 0
 			}
 
@@ -50,7 +50,7 @@ func Analyze(data []map[string]interface{}, analysisType string) map[string]map[
 			if _, ok := dataMap[result["Country"].(string)][result["Server"].(string)]["Anomalies"]; !ok {
 				dataMap[result["Country"].(string)][result["Server"].(string)]["Anomalies"] = 0
 			}
-			if _, ok := dataMap[result["Country"].(string)][result["Server"].(string)]["Confirmed"]; !ok {
+			if _, ok := dataMap[result["Country"].(string)][result["Server"].(string)]["Confirmations"]; !ok {
 				dataMap[result["Country"].(string)][result["Server"].(string)]["Confirmations"] = 0
 			}
 
@@ -78,7 +78,7 @@ func Analyze(data []map[string]interface{}, analysisType string) map[string]map[
 			if _, ok := dataMap[result["Country"].(string)][result["ErrorType"].(string)]["Anomalies"]; !ok {
 				dataMap[result["Country"].(string)][result["ErrorType"].(string)]["Anomalies"] = 0
 			}
-			if _, ok := dataMap[result["Country"].(string)][result["ErrorType"].(string)]["Confirmed"]; !ok {
+			if _, ok := dataMap[result["Country"].(string)][result["ErrorType"].(string)]["Confirmations"]; !ok {
 				dataMap[result["Country"].(string)][result["ErrorType"].(string)]["Confirmations"] = 0
 			}
 
