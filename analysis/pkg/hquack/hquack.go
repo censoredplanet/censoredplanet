@@ -261,7 +261,7 @@ func ProcessLine() *goflow.Graph {
 	return network
 }
 
-//Prompt gets the user's choice of anaylisys type
+//Prompt gets the user's choice of analysis type
 func Prompt() string {
 
 	types := []analyses{
@@ -322,7 +322,7 @@ func AnalyzeHquack(inputFile string, outputFile string, technique string) {
 
 	//Read the Tar file
 	//TODO: Read more than one tar file for files in 2020
-	fileBytes, err := tarballReader.ReadTarball(fileReader)
+	fileBytes, err := tarballReader.ReadTarball(fileReader, "results.json")
 	if err != nil {
 		log.Fatal("Could not read tarball", err.Error())
 

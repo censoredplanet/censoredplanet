@@ -11,35 +11,22 @@ Satellite-v1 corresponds to measurements from 2018 to February 2021. See Satelli
 The published data has the following directory structure: ::
 
     CP_Satellite-YYYY-MM-DD-HH-MM-SS/
-    |-- log.json
-    |-- raw/
-    |   |-- answers_control.json
-    |   |-- answers_err.json
-    |   |-- answers_ip.json
-    |   |-- answers.json
-    |   |-- answers_raw.json
-    |   |-- dns.pkt
-    |   |-- interference_err.json
-    |   |-- interference.json
-    |   |-- resolvers_err.json
-    |   |-- resolvers_ip.json
-    |   |-- resolvers.json
-    |   |-- resolvers_ptr.json
-    |   |-- resolvers_raw.json
-    |   |-- tagged_answers.json
-    |   |-- tagged_resolvers.json
-    |-- stat/
-        |-- stat_answers.json
-        |-- stat_interference_agg.json
-        |-- stat_interference_count.json
-        |-- stat_interference_country_domain.json
-        |-- stat_interference_country.json
-        |-- stat_interference_country_percentage.json
-        |-- stat_interference_err.json
-        |-- stat_interference.json
-        |-- stat_resolvers_country.json
-        |-- stat_resolvers.json
-        |-- stat_tagged.json
+    |-- answers_control.json
+    |-- answers_err.json
+    |-- answers_ip.json
+    |-- answers.json
+    |-- answers_raw.json
+    |-- dns.pkt
+    |-- interference_err.json
+    |-- interference.json
+    |-- resolvers_err.json
+    |-- resolvers_ip.json
+    |-- resolvers.json
+    |-- resolvers_ptr.json
+    |-- resolvers_raw.json
+    |-- tagged_answers.json
+    |-- tagged_resolvers.json
+   
 
 
 *******

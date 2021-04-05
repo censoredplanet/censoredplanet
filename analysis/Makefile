@@ -1,5 +1,4 @@
 all:
 	mkdir -p bin
-	(cd cmd; go get)
-	(cd cmd; go vet)
+	go install cmd/analyze-cp.go
 	go build -o bin/analyze-cp cmd/analyze-cp.go
