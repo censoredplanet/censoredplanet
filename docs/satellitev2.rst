@@ -117,7 +117,7 @@ Query
         * :code:`error` : String
             Contains error information.
         * :code:`rcode` : Integer
-            Response code mapping to success (0) or errors (>0).
+            Response code mapping to success (0) or errors (-1 for connection error, > 0 for errors specified in `RFC 2929 <https://tools.ietf.org/html/rfc2929#section-2.3>`_).
         * :code:`start_time` : String
             The start time of the measurement.
         * :code:`end_time` : String
