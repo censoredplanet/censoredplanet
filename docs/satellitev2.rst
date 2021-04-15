@@ -95,7 +95,7 @@ Query
 
     **Note:**
 
-        * NEW: The query for the test domain is attempted up to four times in case of non Type A response. To check the status of the resolver, a control domain is queried before and after the queries for the test domain.
+        * NEW: The query for the test domain is attempted up to four times in case of connection error. To check the status of the resolver, a control measurement is conducted before the test domain. If all 4 trails for the test domain fail, another control measurement will be conducted.
 
 2. Parse and separate responses from control resolvers and non-control resolvers.
 
@@ -187,7 +187,7 @@ Detect
     * :code:`test_url` : String
         The domain being queried.
     * :code:`response` : JSON object
-        The resolver's returned answer IPs for the queried domain are the keys. Each answer IP is mapped to an array of its tags that matched the control tags - if the IP is in the control set, "ip" is appended and if the IP has no tags, "no_tags" is appended. Also has an :code:`rcode` field mapping to a list of response codes for the trials.
+        The resolver's returned answer IPs for the queried domain are the keys. Each answer IP is mapped to an array of its tags that matched the control tags - if the IP is in the control set, "ip" is appended and if the IP has no tags, "no_tags" is appended. :code:`rcode` field maps to a list of response codes for the trials. :code:`err` field maps to a list of response error messages in case of connection errors.
     * :code:`passed_control` : Boolean
         Equals true if both control queries were successful.
     * :code:`in_control_group` : Boolean
