@@ -187,7 +187,7 @@ Detect
     * :code:`test_url` : String
         The domain being queried.
     * :code:`response` : JSON object
-        The resolver's returned answer IPs for the queried domain are the keys. Each answer IP is mapped to an array of its tags that matched the control tags - if the IP is in the control set, "ip" is appended and if the IP has no tags, "no_tags" is appended. The :code:`rcode` field maps to a list of response codes for the trials. The :code:`err` field maps to a list of response error messages in case of connection errors.
+        The resolver's returned answer IPs for the queried domain are the keys. Each answer IP is mapped to an array of its tags that matched the control tags - if the IP is in the control set, "ip" is appended and if the IP has no tags, "no_tags" is appended. The :code:`rcode` field maps to a list of response codes for the trials. The :code:`error` field maps to a list of response error messages in case of connection errors.
     * :code:`passed_control` : Boolean
         Equals true if both control queries were successful.
     * :code:`in_control_group` : Boolean
