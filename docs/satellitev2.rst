@@ -193,7 +193,7 @@ Detect
     * :code:`in_control_group` : Boolean
         Equals true if at least one control resolver had a valid response for this test domain.
     * :code:`connect_error` : Boolean
-        Equals true if all test domain query attempts returned errors. This field to set to be :code:`true` if the first control measurement fails, and no further measurements for the test domain are conducted.
+        Equals true if all test domain query attempts returned errors. This field is also set to be :code:`true` if the first control measurement fails, and no further measurements for the test domain are conducted. Use this field in conjunction with the :code:`passed_control` field to find anomalies.
     * :code:`anomaly` : Boolean
         Equals true if an anomaly is detected. In case there are no tags for the answers or control, then this field is conservatively marked as false. 
     * :code:`start_time` : String
