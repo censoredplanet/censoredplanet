@@ -95,7 +95,7 @@ Query
 
     **Note:**
 
-        * NEW: The query for the test domain is attempted up to four times in case of non Type A response. To check the status of the resolver, a control domain is queried before and after the queries for the test domain.
+        * NEW: The query for the test domain is attempted up to four times in case of connection error. To check the status of the resolver, a control measurement is conducted before the queries for test domain. If the first control measurement fails, no further measurements will be conducted for the same :code:`<resolver-domain>` pair. If all 4 trials for the test domain fail, another control measurement will be conducted.
 
 2. Parse and separate responses from control resolvers and non-control resolvers.
 
@@ -187,13 +187,13 @@ Detect
     * :code:`test_url` : String
         The domain being queried.
     * :code:`response` : JSON object
-        The resolver's returned answer IPs for the queried domain are the keys. Each answer IP is mapped to an array of its tags that matched the control tags - if the IP is in the control set, "ip" is appended and if the IP has no tags, "no_tags" is appended. Also has an :code:`rcode` field mapping to a list of response codes for the trials.
+        The resolver's returned answer IPs for the queried domain are the keys. Each answer IP is mapped to an array of its tags that matched the control tags - if the IP is in the control set, "ip" is appended and if the IP has no tags, "no_tags" is appended. The :code:`rcode` field maps to a list of response codes for the trials. The :code:`error` field maps to a list of response error messages in case of connection errors.
     * :code:`passed_control` : Boolean
         Equals true if both control queries were successful.
     * :code:`in_control_group` : Boolean
         Equals true if at least one control resolver had a valid response for this test domain.
     * :code:`connect_error` : Boolean
-        Equals true if all test domain query attempts returned errors.
+        Equals true if all test domain query attempts returned errors. This field is also set to be :code:`true` if the first control measurement fails, and no further measurements for the test domain are conducted. Use this field in conjunction with the :code:`passed_control` field to find anomalies.
     * :code:`anomaly` : Boolean
         Equals true if an anomaly is detected. In case there are no tags for the answers or control, then this field is conservatively marked as false. 
     * :code:`start_time` : String
