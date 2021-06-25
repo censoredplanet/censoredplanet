@@ -66,7 +66,7 @@ Filter
 Query
 ------
 
-1. Make DNS queries for each test domain to each resolver. The query for the test domain is attempted up to four times in case of connection error. To check the status of the resolver, a control measurement is conducted before the queries for the test domain. If the first control measurement fails, no further measurements will be conducted for the same :code:`<resolver-domain>` pair. If all 4 trials for the test domain fail, another control measurement will be conducted.
+1. Make DNS queries for each test domain to each resolver. The query for the test domain is attempted up to four times in case of connection error. To check the status of the resolver, a control measurement is conducted before the queries for the test domain. If the first control measurement fails, no further measurements will be conducted for the same :code:`(resolver, domain)` pair. If all 4 trials for the test domain fail, another control measurement will be conducted.
 
 2. Parse and separate responses from control resolvers and non-control resolvers.
 
@@ -141,7 +141,9 @@ Verify
     * :code:`end_time` : String
             The end time of the measurement.
     * :code:`response` : JSON object
+
         The resolver's returned answers for the queried domain are the keys.
+
         * :code:`url`: String
             The domain being queried in this trial, either the control domain for liveness test or :code:`test_url`. The liveness test DNS responses are only recorded if they do not contain a type-A RR.
         * :code:`has_type_a`: Boolean
@@ -152,6 +154,7 @@ Verify
             Response code mapping to success (0) or errors (-1 for connection error, > 0 for errors specified in `RFC 2929 <https://tools.ietf.org/html/rfc2929#section-2.3>`_).
         * :code:`response`: JSON Object
             Consist of a map between IPs the resolver responded for the queried domain and tags from Maxmind:
+
             * :code:`http` : String
                 The hash of the HTTP body.
             * :code:`cert` : String
@@ -161,7 +164,8 @@ Verify
             * :code:`asnum` : Integer
                 The autonomous system (AS) number.
             * :code:`matched` : Array
-            An array of its tags that matched the control tags - if the IP is in the control set, "ip" is appended and if the IP has no tags, "no_tags" is appended.
+                An array of its tags that matched the control tags - if the IP is in the control set, "ip" is appended and if the IP has no tags, "no_tags" is appended.
+
     * :code:`confidence` : JSON object
         * :code:`average` : Float
             The average percentage of tags matching the control set for the answers (average of :code:`matches`).
