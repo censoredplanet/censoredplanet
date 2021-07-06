@@ -67,7 +67,7 @@ Fields
         results array is a control probe, this field will be included. Contains
         the control URL used in the probe.
     * :code:`start_time` : Timestamp
-        Th1e time when the probe was sent.
+        The time when the probe was sent.
     * :code:`end_time` : Timestamp
         The time when the reponse to the probe response arrived.
 
@@ -89,6 +89,9 @@ Fields
     first control is blocked but the second isn’t, there is potentially
     stateful blocking. If this trial shows evidence of stateful blocking,
     this field is set to :code:`true`.
+* :code:`tag` : String
+    If the work that produced this output was added to Hyperquack-v2 with a tag,
+    this field will be included. Contains the work's tag.
 
 ******************
 Evaluation Outputs
@@ -139,6 +142,9 @@ Fields
     If there was an issue in generating the template for this service, this
     field will be included. Describes the issue encountered when generating the
     template or when comparing subsequent control probes to the template.
+* :code:`tag` : String
+    If the work that produced this output was added to Hyperquack-v2 with a tag,
+    this field will be included. Contains the work's tag.
 
 *************
 Notes
