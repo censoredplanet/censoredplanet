@@ -13,7 +13,6 @@
 # import os
 # import sys
 # sys.path.insert(0, os.path.abspath('.'))
-import renku_sphinx_theme
 
 # -- Project information -----------------------------------------------------
 
@@ -48,9 +47,10 @@ exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 # a list of builtin themes.
 #
 html_theme = 'renku'
+#html_theme_path = ['.']
 html_theme_options = {
     'logo_only': True,
-    'display_version': True,
+    'display_version': False,
     'prev_next_buttons_location': 'bottom',
     'style_external_links': False,
     # Toc options
@@ -62,7 +62,7 @@ html_theme_options = {
     "github_user": "censoredplanet/censoredplanet",
     "github_button": "true",
 }
-html_logo = 'images/cp-logo.png'
+html_logo = 'images/cp-monochrome.png'
 
 # Setting the master doc to index.rst since sphinx is looking for contents.rst by default
 master_doc = 'index'
