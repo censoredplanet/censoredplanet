@@ -17,7 +17,7 @@
 # -- Project information -----------------------------------------------------
 
 project = 'Censored Planet Observatory'
-copyright = '2020, Ram Sundara Raman, Elisa Tsai, Apurva Virkud, Armin Huremagic. Roya Ensafi'
+copyright = '2021, Censored Planet'
 author = 'Ram Sundara Raman, Elisa Tsai, Apurva Virkud, Armin Huremagic, Roya Ensafi'
 
 # The full version, including alpha/beta/rc tags
