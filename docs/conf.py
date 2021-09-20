@@ -18,8 +18,8 @@
 # -- Project information -----------------------------------------------------
 
 project = 'Censored Planet Observatory'
-copyright = '2020, Ram Sundara Raman, Nick Ceccio, Elisa Tsai, Leonid Evdokimov, Apurva Virkud, Roya Ensafi'
-author = 'Ram Sundara Raman, Nick Ceccio, Elisa Tsai, Leonid Evdokimov, Apurva Virkud, Roya Ensafi'
+copyright = '2020, Ram Sundara Raman, Elisa Tsai, Apurva Virkud, Armin Huremagic. Roya Ensafi'
+author = 'Ram Sundara Raman, Elisa Tsai, Apurva Virkud, Armin Huremagic, Roya Ensafi'
 
 # The full version, including alpha/beta/rc tags
 release = '2.0'
@@ -47,12 +47,22 @@ exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 #
-html_theme = 'alabaster'
-
-# Add any paths that contain custom static files (such as style sheets) here,
-# relative to this directory. They are copied after the builtin static files,
-# so a file named "default.css" will overwrite the builtin "default.css".
-html_static_path = []
+html_theme = 'renku'
+html_theme_options = {
+    'logo_only': True,
+    'display_version': True,
+    'prev_next_buttons_location': 'bottom',
+    'style_external_links': False,
+    # Toc options
+    'collapse_navigation': True,
+    'sticky_navigation': True,
+    'navigation_depth': 4,
+    'includehidden': True,
+    'titles_only': False,
+    "github_user": "censoredplanet/censoredplanet",
+    "github_button": "true",
+}
+html_logo = 'images/cp-logo.png'
 
 # Setting the master doc to index.rst since sphinx is looking for contents.rst by default
 master_doc = 'index'
