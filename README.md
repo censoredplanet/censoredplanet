@@ -21,9 +21,23 @@ This respository contains documentation about the raw data from the [Censored Pl
  ```
 
 ## Documentation 
-The documentation is available in the `docs` directory and it is hosted [here](https://censoredplanet.readthedocs.io). 
+The documentation is available in the `docs` directory and it is hosted [here](https://docs.censoredplanet.org). 
 
 Before generating the document, you must run `pip install sphinx`.
 
 To generate the document, run `make html` in the `docs` directory.
 The html files will be in the `_build` subdirectory.
+
+## Paper
+Take a look at the [Censored Planet CCS paper](https://censoredplanet.org/assets/censoredplanet.pdf) and the rest of our [publications](https://censoredplanet.org/publications) and [reports](https://censoredplanet.org/reports) for in-depth details about how Censored Planet works.
+
+## Citation
+Please use the following bibtex to refer to Censored Planet:
+```
+@inproceedings{sundararaman2020censoredplanet,
+title ={Censored Planet: An Internet-Wide, Longitudinal Censorship Observatory},
+author ={Sundara Raman, Ram and Shenoy, Prerana and Kohls, Katharina and Ensafi, Roya},
+booktitle={In ACM SIGSAC Conference on Computer and Communications Security (CCS)},
+year={2020}
+}
+```
