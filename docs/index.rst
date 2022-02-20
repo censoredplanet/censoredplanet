@@ -19,7 +19,7 @@ Censored Planet data is available to the public through the Censored Planet webs
 
 Figure - Raw data files on the Censored Planet website
 
-Each scan contains a test of all 2,000 websites tested by Censored Planet with a set of vantage points across different countries. The archive files can be downloaded, extracted and analyzed. The data formats change based on the version of the measurement technique. The data formats and tips for analyzing the data for each of the published data files and versions are available below. It is critical that the raw data produced by Censored Planet is treated as a network observation and analyzed further using our `analysis pipeline <https://github.com/censoredplanet/censoredplanet-analysis>_` sample `analysis scripts <https://github.com/censoredplanet/censoredplanet>`_ 
+Each scan contains a test of all 2,000 websites tested by Censored Planet with a set of vantage points across different countries. The archive files can be downloaded, extracted and analyzed. The data formats change based on the version of the measurement technique. The data formats and tips for analyzing the data for each of the published data files and versions are available below. It is critical that the raw data produced by Censored Planet is treated as a network observation and analyzed further using our `analysis pipeline <https://github.com/censoredplanet/censoredplanet-analysis>`_ sample `analysis scripts <https://github.com/censoredplanet/censoredplanet>`_ 
  before use. For more information about using the data, please refer to the `Censored Planet Github <https://github.com/censoredplanet/censoredplanet>`_, or email Censored Planet at `censoredplanet@umich.edu <mailto:censoredplanet@umich.edu>`_. 
 
 ********

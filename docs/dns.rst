@@ -735,7 +735,7 @@ possibility that certain measurements are marked as anomalies incorrectly. To co
 that the raw DNS responses are compared to known blockpage fingerprints. The blockpage fingerprints
 currently recorded by Censored Planet are available `here <https://assets.censoredplanet.org/blockpage_signatures.json>`_.
 Moreover, aggregations can be used to avoid anomalous vantage points and domains.  
-Please use our `analysis pipeline <https://github.com/censoredplanet/censoredplanet-analysis>_` sample `analysis scripts <https://github.com/censoredplanet/censoredplanet>`_ 
+Please use our `analysis pipeline <https://github.com/censoredplanet/censoredplanet-analysis>`_ sample `analysis scripts <https://github.com/censoredplanet/censoredplanet>`_ 
 to process the data before using it.
 
 Censored Planet detects network interference of websites using remote measurements to infrastructural vantage points 
