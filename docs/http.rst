@@ -273,11 +273,11 @@ Notes
 *************
 While Hyperquack-v2 includes multiple trials intended to avoid random network errors, there is still a 
 possibility that certain measurements are marked as anomalies incorrectly. To confirm censorship, it is
-recommended that the raw responses are compared to known blockpage fingerprints. The blockpage fingerprints
+critical that the raw responses are compared to known blockpage fingerprints. The blockpage fingerprints
 currently recorded by Censored Planet are available `here <https://assets.censoredplanet.org/blockpage_signatures.json>`_.
 Moreover, network errors (such as TCP handshake and Setup errors) must be filtered out to avoid false inferences. 
-Please refer to our sample `analysis scripts <https://github.com/censoredplanet/censoredplanet>`_ for a guide on processing 
-the data. 
+Please use our `analysis pipeline <https://github.com/censoredplanet/censoredplanet-analysis>_` sample `analysis scripts <https://github.com/censoredplanet/censoredplanet>`_ 
+to process the data before using it.
 
 Censored Planet detects network interference of websites using remote measurements to infrastructural vantage points 
 within networks (eg. institutions). Note that this raw data cannot determine the entity responsible for the blocking 
