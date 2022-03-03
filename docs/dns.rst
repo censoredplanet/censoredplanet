@@ -559,7 +559,7 @@ The published data has the following directory structure: ::
     |-- resolvers_raw.json
     |-- dns.pkt
     |-- resolvers.json
-    |-- results_verified.json
+    |-- results.json
     |-- blockpages.json
 
 Satellite v2 is divided into three parts: 
@@ -664,7 +664,7 @@ Verify
 ~~~~~~
 
 1. New heuristics to exclude possible cases of erroneous answers from resolvers. Currently, :code:`verify` excludes answer IPs that are part of big CDNs (Note: this could lead to false negatives) and answer IPs that appear for a low number of domains (<=2). 
-    :code:`results_verified.json` contains all the information when running :code:`full` mode.
+    :code:`results.json` contains all the information when running :code:`full` mode.
 
     * :code:`vp` : String
         The IP address of the vantage point (a DNS resolver).
