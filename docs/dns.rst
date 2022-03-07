@@ -539,15 +539,20 @@ Verify
 Satellite-v2.1
 ==============
 Satellite-v2.1 incorporates minor changes from Satellite-v2.0, starting after April 14, 2021. The changes include,
+
 * In the filter module, we removed resolvers from resolvers.json if they can not resolve the root server
+
 * We removed the liveness test response from results.json and results_verified.json.
+
 * We removed the error messages from results.json and results_verified.json, if any.
 
 ==============
 Satellite-v2.2
 ==============
 Satellite-v2.2 incorporates major changes in code and data structure from Satellite-v2.1, but no major changes in the functionality of Satellite. The changes are made after June 7, 2021 and they include,
+
 * Store information generated from the query, tag, detect, and verify module in memory, producing only one file (results.json) as output, instead of generating outputs for every module. Renamed query-tag-detect-verify as “test” module, and probe-filter as “discovery”.
+
 * Updated test module so that it first conducts queries for control resolvers, and then query, tag and detect test resolvers in batches.
 
 Data Format
@@ -559,7 +564,7 @@ The published data has the following directory structure: ::
     |-- resolvers_raw.json
     |-- dns.pkt
     |-- resolvers.json
-    |-- results_verified.json
+    |-- results.json
     |-- blockpages.json
 
 Satellite v2 is divided into three parts: 
@@ -664,7 +669,7 @@ Verify
 ~~~~~~
 
 1. New heuristics to exclude possible cases of erroneous answers from resolvers. Currently, :code:`verify` excludes answer IPs that are part of big CDNs (Note: this could lead to false negatives) and answer IPs that appear for a low number of domains (<=2). 
-    :code:`results_verified.json` contains all the information when running :code:`full` mode.
+    :code:`results.json` contains all the information when running :code:`full` mode.
 
     * :code:`vp` : String
         The IP address of the vantage point (a DNS resolver).
