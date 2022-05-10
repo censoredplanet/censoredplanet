@@ -742,6 +742,7 @@ To provide raw data for easy data analysis, we made the following changes:
 
 2. Separated the data collection phase and data analysis phase. Right now the Satellite data from our `public data bucket <https://data.censoredplanet.org/raw>`_ is truthful to the data collected without further analysis. We deprecated the “anomaly” field since there are misunderstandings that anomaly represents censorship.
 
+3. Added new data containing further metadata fields and flattened nested data for easy analysis. Modified field names for disambiguation purposes.
 
     * :code:`domain` : String
         The test domain being queried.
@@ -802,7 +803,7 @@ To provide raw data for easy data analysis, we made the following changes:
             Parsed HTTP page headers from :code:`fetch` module.
         * :code:`http_response_body`: String
             Parsed HTTP page body from :code:`fetch` module.
-         * :code:`https_error`: String
+        * :code:`https_error`: String
             Parsed HTTPS page error message from :code:`fetch` module.
         * :code:`https_response_status`: String
             Parsed HTTPS page status code from :code:`fetch` module.
@@ -817,15 +818,15 @@ To provide raw data for easy data analysis, we made the following changes:
         * :code:`https_tls_cert`: String
             Parsed TLS certificate from :code:`fetch` module.
         * :code:`https_tls_cert_common_name`: String
-            Parsed common name field from TLS certificate from :code:`fetch` module.
+            Parsed common name field from TLS certificate.
         * :code:`https_tls_cert_alternative_names`: String
-            Parsed alternative name field from TLS certificate from :code:`fetch` module.
+            Parsed alternative name field from TLS certificate.
         * :code:`https_tls_cert_issuer`: String
-            Parsed issuer field from TLS certificate from :code:`fetch` module.
+            Parsed issuer field from TLS certificate.
         * :code:`https_tls_cert_start_date`: String
-            Parsed start date of the TLS certificate from :code:`fetch` module.
+            Parsed start date of the TLS certificate.
         * :code:`https_tls_cert_end_date`: String
-            Parsed end date of the TLS certificate from :code:`fetch` module.
+            Parsed end date of the TLS certificate.
 
 *****
 Notes
