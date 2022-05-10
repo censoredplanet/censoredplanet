@@ -268,9 +268,9 @@ Fields
     If the work that produced this output was added to Hyperquack-v2 with a tag,
     this field will be included. Contains the work's tag.
 
-==============
+*************
 Hyperquack-v2-raw
-==============
+*************
 
 To provide raw data for easy data analysis, we made the following changes:
 
