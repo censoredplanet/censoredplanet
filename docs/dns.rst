@@ -732,6 +732,101 @@ Verify
     * :code:`exclude_reason` : String Array
         The reasons that this observation should be excluded (eg. "is_CDN")
 
+==============
+Satellite-v2.2-raw
+==============
+
+To provide raw data for easy data analysis, we made the following changes:
+
+1. Split data based on the country of resolvers so that it is easier to select and download data according to your country of interest.
+
+2. Separated the data collection phase and data analysis phase. Right now the Satellite data from our `public data bucket <https://data.censoredplanet.org/raw>`_ is truthful to the data collected without further analysis. We deprecated the “anomaly” field since there are misunderstandings that anomaly represents censorship.
+
+
+    * :code:`domain` : String
+        The test domain being queried.
+    * :code:`domain_is_control` : Boolean
+        Equals true if the queried domain is the root server for liveness test.
+    * :code:`test_url` : String
+        The IP address of the vantage point (a DNS resolver).
+    * :code:`date` : String
+            The date of the measurement.
+    * :code:`start_time` : String
+            The start time of the measurement.
+    * :code:`end_time` : String
+            The end time of the measurement.
+    * :code:`resolver_ip` : String
+        The IP address of the vantage point (a DNS resolver).
+    * :code:`resolver_name` : String
+        The hostname of the vantage point.
+    * :code:`resolver_is_trusted` : Boolean
+        Equals true if the resolver is a control resolver.
+    * :code:`resolver_netblock` : String
+        The netblock the vantage point belongs to.
+    * :code:`resolver_asn` : String
+        The AS number of the AS the vantage point resides in.
+    * :code:`resolver_as_name` : String
+        The name of the AS the vantage point resides in.
+    * :code:`resolver_as_full_name` : String
+        The full name of the AS the vantage point resides in.
+    * :code:`resolver_as_class` : String
+        The class of the AS the vantage point resides in.
+    * :code:`resolver_country` : String
+        The country the vantage point resides in.
+    * :code:`resolver_organization` : String
+        The IP organization the vantage point resides in.
+    * :code:`received_error` : String
+        Flatten error messages from the received responses.
+    * :code:`received_rcode` : Integer
+        Flatten rcode from the received responses. Response code mapping to success (0) or errors (-1 for connection error, > 0 for errors specified in `RFC 2929 <https://tools.ietf.org/html/rfc2929#section-2.3>`_).
+    * :code:`source` : String
+        Tar file name of the measurement.
+    * :code:`answers` : JSON object
+        The resolver's returned answers for queried domain.
+
+        * :code:`ip`: String
+            Returned IP.
+        * :code:`asn`: String
+            The AS number of the AS the returned IP resides in.
+        * :code:`as_name`: String
+            The AS name of the AS the returned IP resides in.
+        * :code:`censys_http_body_hash`: String
+            The hash of the HTTP body from Censys.
+        * :code:`censys_ip_cert`: String
+            The hash of the TLS certificate from Censys.
+        * :code:`http_error`: String
+            Parsed HTTP page error message from :code:`fetch` module.
+        * :code:`http_response_status`: String
+            Parsed HTTP page status code from :code:`fetch` module.
+        * :code:`http_response_headers`: String
+            Parsed HTTP page headers from :code:`fetch` module.
+        * :code:`http_response_body`: String
+            Parsed HTTP page body from :code:`fetch` module.
+         * :code:`https_error`: String
+            Parsed HTTPS page error message from :code:`fetch` module.
+        * :code:`https_response_status`: String
+            Parsed HTTPS page status code from :code:`fetch` module.
+        * :code:`https_response_headers`: String
+            Parsed HTTPS page headers from :code:`fetch` module.
+        * :code:`https_response_body`: String
+            Parsed HTTPS page body from :code:`fetch` module.
+        * :code:`https_tls_version`: String
+            Parsed TLS version from :code:`fetch` module.
+        * :code:`https_tls_cipher_suite`: String
+            Parsed TLS cipher suite from :code:`fetch` module.
+        * :code:`https_tls_cert`: String
+            Parsed TLS certificate from :code:`fetch` module.
+        * :code:`https_tls_cert_common_name`: String
+            Parsed common name field from TLS certificate from :code:`fetch` module.
+        * :code:`https_tls_cert_alternative_names`: String
+            Parsed alternative name field from TLS certificate from :code:`fetch` module.
+        * :code:`https_tls_cert_issuer`: String
+            Parsed issuer field from TLS certificate from :code:`fetch` module.
+        * :code:`https_tls_cert_start_date`: String
+            Parsed start date of the TLS certificate from :code:`fetch` module.
+        * :code:`https_tls_cert_end_date`: String
+            Parsed end date of the TLS certificate from :code:`fetch` module.
+
 *****
 Notes
 *****
