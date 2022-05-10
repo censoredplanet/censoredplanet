@@ -274,9 +274,9 @@ Hyperquack-v2-raw
 
 To provide raw data for easy data analysis, we made the following changes:
 
-1. Split data based on the country of resolvers so that it is easier to select and download data according to your country of interest.
+1. Split data based on the country of vantage points so that it is easier to select and download data according to users' country of interest.
 
-2. Separated the data collection phase and data analysis phase. Right now the Hyperquack data from our `raw measurement data website<https://data.censoredplanet.org/raw>`_ is truthful to the data collected without further analysis. We deprecated the “anomaly” field since there are misunderstandings that anomaly represents censorship.
+2. Separated the data collection phase and data analysis phase. Right now the Hyperquack data from our `raw measurement data website <https://data.censoredplanet.org/raw>`_ is truthful to the data collected without further analysis. We deprecated the “anomaly” field since there are misunderstandings that anomaly represents censorship.
 
 3. Added new data containing further metadata fields and flattened nested data for easy analysis. Modified field names for disambiguation purposes.
 
