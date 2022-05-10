@@ -4,8 +4,79 @@ HTTP(S) Data - Hyperquack
 
 Hyperquack (and Quack) is Censored Planet’s measurement techniques that measure application-layer interference using the Echo, Discard, HTTP, and HTTPS protocols. Below, we provide a detailed overview of Hyperquack, and the data formats of Hyperquack data `published on the Censored Planet website <http://data.censoredplanet.org/raw>`_. Refer to our academic papers for more information about `Quack <https://censoredplanet.org/assets/VanderSloot2018.pdf>`_ and `Hyperquack <https://censoredplanet.org/assets/filtermap.pdf>`_.
 
+
 *************
-Hyperquack-v1
+Hyperquack-v2-raw
+*************
+
+To provide raw data for easy data analysis, we made the following changes:
+
+1. Split data based on the country of vantage points so that it is easier to select and download data according to users' country of interest.
+
+2. Separated the data collection phase and data analysis phase. Right now the Hyperquack data from our `raw measurement data website <https://data.censoredplanet.org/raw>`_ is truthful to the data collected without further analysis. We deprecated the “anomaly” field since there are misunderstandings that anomaly represents censorship.
+
+3. Added new data containing further metadata fields and flattened nested data for easy analysis. Modified field names for disambiguation purposes.
+
+    * :code:`domain` : String
+        The test domain being queried.
+    * :code:`domain_is_control` : Boolean
+        Equals true if the queried domain is for the liveness test.
+    * :code:`date` : String
+            The date of the measurement.
+    * :code:`start_time` : String
+            The start time of the measurement.
+    * :code:`end_time` : String
+            The end time of the measurement.
+    * :code:`server_ip` : String
+        The IP address of the vantage point.
+    * :code:`server_netblock` : String
+        The netblock the vantage point belongs to.
+    * :code:`server_asn` : String
+        The AS number of the AS the vantage point resides in.
+    * :code:`server__as_name` : String
+        The name of the AS the vantage point resides in.
+    * :code:`server__as_full_name` : String
+        The full name of the AS the vantage point resides in.
+    * :code:`server__as_class` : String
+        The class of the AS the vantage point resides in.
+    * :code:`server_country` : String
+        The country the vantage point resides in.
+    * :code:`server_organization` : String
+        The IP organization the vantage point resides in.
+    * :code:`source` : String
+        Tar file name of the measurement.
+    * :code:`received_error` : String
+        Flatten error messages from the received responses.
+    * :code:`received_status`: String
+        Flatten status code from the received responses.
+    * :code:`received_headers`: String
+        Parsed HTTPS page headers.
+    * :code:`received_body`: String
+        Parsed HTTPS page body.
+    * :code:`received_tls_version`: String
+        Parsed TLS version.
+    * :code:`received_tls_cipher_suite`: String
+        Parsed TLS cipher suite.
+    * :code:`received_tls_cert`: String
+        Parsed TLS certificate.
+    * :code:`received_tls_cert_common_name`: String
+        Parsed common name field from TLS certificate.
+    * :code:`received_tls_cert_alternative_names`: String
+        Parsed alternative name field from TLS certificate.
+    * :code:`received_tls_cert_issuer`: String
+        Parsed issuer field from TLS certificate.
+    * :code:`matches_template`: Boolean
+        Equals true if the response given by the vantage point matches the known template.
+    * :code:`no_response_in_measurement_matches_template`: Boolean
+        Equals true if the responses from all the trials failed to match the known template.
+    * :code:`controls_failed`: Boolean
+        Set to :code:`true` when all control probes sent to the vantage point fail to match the known template. This implies that the mismatching responses are due to an error in the vantage point or the network, not censorship. Rows with :code:`controls_failed` set to :code:`true` should not be considered for analysis. 
+    * :code:`stateful_block` : Boolean
+        Equals true if another control probe sent immediately after our sensitive probes is blocked, but the second control measurement sent after 2 minutes was not.
+    
+
+*************
+Hyperquack-v1 (deprecated)
 *************
 
 .. image:: images/hyperquack-v1.png
@@ -109,7 +180,7 @@ Fields
     this field is set to :code:`true`.
 
 *************
-Hyperquack-v2
+Hyperquack-v2 (deprecated)
 *************
 
 Hyperquack-v2 is our new version of both the Quack and Hyperquack measurement techniques. We’ve restructured the system to work as a request-based measurement server rather than a single-use measurement program. A user will run the program on a machine that will act as a server, and then users can interact with the program using a JSON API. The implications of this restructure are as follows.
@@ -268,75 +339,6 @@ Fields
     If the work that produced this output was added to Hyperquack-v2 with a tag,
     this field will be included. Contains the work's tag.
 
-*************
-Hyperquack-v2-raw
-*************
-
-To provide raw data for easy data analysis, we made the following changes:
-
-1. Split data based on the country of vantage points so that it is easier to select and download data according to users' country of interest.
-
-2. Separated the data collection phase and data analysis phase. Right now the Hyperquack data from our `raw measurement data website <https://data.censoredplanet.org/raw>`_ is truthful to the data collected without further analysis. We deprecated the “anomaly” field since there are misunderstandings that anomaly represents censorship.
-
-3. Added new data containing further metadata fields and flattened nested data for easy analysis. Modified field names for disambiguation purposes.
-
-    * :code:`domain` : String
-        The test domain being queried.
-    * :code:`domain_is_control` : Boolean
-        Equals true if the queried domain is for the liveness test.
-    * :code:`date` : String
-            The date of the measurement.
-    * :code:`start_time` : String
-            The start time of the measurement.
-    * :code:`end_time` : String
-            The end time of the measurement.
-    * :code:`server_ip` : String
-        The IP address of the vantage point.
-    * :code:`server_netblock` : String
-        The netblock the vantage point belongs to.
-    * :code:`server_asn` : String
-        The AS number of the AS the vantage point resides in.
-    * :code:`server__as_name` : String
-        The name of the AS the vantage point resides in.
-    * :code:`server__as_full_name` : String
-        The full name of the AS the vantage point resides in.
-    * :code:`server__as_class` : String
-        The class of the AS the vantage point resides in.
-    * :code:`server_country` : String
-        The country the vantage point resides in.
-    * :code:`server_organization` : String
-        The IP organization the vantage point resides in.
-    * :code:`source` : String
-        Tar file name of the measurement.
-    * :code:`received_error` : String
-        Flatten error messages from the received responses.
-    * :code:`received_status`: String
-        Flatten status code from the received responses.
-    * :code:`received_headers`: String
-        Parsed HTTPS page headers.
-    * :code:`received_body`: String
-        Parsed HTTPS page body.
-    * :code:`received_tls_version`: String
-        Parsed TLS version.
-    * :code:`received_tls_cipher_suite`: String
-        Parsed TLS cipher suite.
-    * :code:`received_tls_cert`: String
-        Parsed TLS certificate.
-    * :code:`received_tls_cert_common_name`: String
-        Parsed common name field from TLS certificate.
-    * :code:`received_tls_cert_alternative_names`: String
-        Parsed alternative name field from TLS certificate.
-    * :code:`received_tls_cert_issuer`: String
-        Parsed issuer field from TLS certificate.
-    * :code:`matches_template`: Boolean
-        Equals true if the response given by the vantage point matches the known template.
-    * :code:`no_response_in_measurement_matches_template`: Boolean
-        Equals true if the responses from all the trials failed to match the known template.
-    * :code:`controls_failed`: Boolean
-        Set to :code:`true` when all control probes sent to the vantage point fail to match the known template. This implies that the mismatching responses are due to an error in the vantage point or the network, not censorship. Rows with :code:`controls_failed` set to :code:`true` should not be considered for analysis. 
-    * :code:`stateful_block` : Boolean
-        Equals true if another control probe sent immediately after our sensitive probes is blocked, but the second control measurement sent after 2 minutes was not.
-    
 
 *************
 Notes
