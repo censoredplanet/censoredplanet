@@ -269,7 +269,7 @@ Fields
     this field will be included. Contains the work's tag.
 
 ==============
-SaHyperquack-v2-raw
+Hyperquack-v2-raw
 ==============
 
 To provide raw data for easy data analysis, we made the following changes:
