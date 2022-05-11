@@ -11,7 +11,7 @@ Welcome to Censored Planet Observatory's documentation!
 
 Censored Planet’s measurement data has been crucial in identifying and monitoring several important censorship and network interference events. In 2019, Censored Planet data was used to `study the large-scale HTTPS interception that occurred in Kazakhstan <https://censoredplanet.org/kazakhstan>`_, and was instrumental in driving changes in major web browsers that blocked the interception attack. Censored Planet data has been used to `study Russia’s decentralized censorship mechanism <https://censoredplanet.org/russia>`_, and `the throttling attack they performed on Twitter <https://censoredplanet.org/throttling>`_.  Censored Planet has also been used to `identify the deployment of network censorship devices <https://censoredplanet.org/filtermap>`_, and `track the blocking of COVID-19 related websites around the world <https://censoredplanet.org/covid>`_. 
 
-Censored Planet data is available to the public through the Censored Planet website: `data.censoredplanet.org/raw <https://data.censoredplanet.org/raw>`_. The Censored Planet raw data website contains archived compressed data files corresponding to one scan using each measurement technique, following by the `ISO Alpha-2 <https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2>`_country code. 
+Censored Planet data is available to the public through the Censored Planet website: `data.censoredplanet.org/raw <https://data.censoredplanet.org/raw>`_. The Censored Planet raw data website contains archived compressed data files. Each filename contains corresponding measurement technique name and the `ISO Alpha-2 <https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2>`_country code. 
 
 .. image:: images/raw_data.png
   :width: 600
