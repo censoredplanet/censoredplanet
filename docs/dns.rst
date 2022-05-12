@@ -21,7 +21,7 @@ To provide raw data for easy data analysis, we made the following changes:
     * :code:`domain_is_control` : Boolean
         Equals true if the queried domain is the root server for liveness test.
     * :code:`test_url` : String
-        The IP address of the vantage point (a DNS resolver).
+        The URL of the queried domain.
     * :code:`date` : String
             The date of the measurement.
     * :code:`start_time` : String
