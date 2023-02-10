@@ -4,9 +4,80 @@ HTTP(S) Data - Hyperquack
 
 Hyperquack (and Quack) is Censored Planet’s measurement techniques that measure application-layer interference using the Echo, Discard, HTTP, and HTTPS protocols. Below, we provide a detailed overview of Hyperquack, and the data formats of Hyperquack data `published on the Censored Planet website <http://data.censoredplanet.org/raw>`_. Refer to our academic papers for more information about `Quack <https://censoredplanet.org/assets/VanderSloot2018.pdf>`_ and `Hyperquack <https://censoredplanet.org/assets/filtermap.pdf>`_.
 
-*************
-Hyperquack-v1
-*************
+
+*****************
+Hyperquack-v2-raw
+*****************
+
+To provide raw data for easy data analysis, we made the following changes:
+
+1. Split data based on the country of vantage points so that it is easier to select and download data according to users' country of interest.
+
+2. Separated the data collection phase and data analysis phase. Right now the Hyperquack data from our `raw measurement data website <https://data.censoredplanet.org/raw>`_ is truthful to the data collected without further analysis. We deprecated the “anomaly” field since there are misunderstandings that anomaly represents censorship.
+
+3. Added new data containing further metadata fields and flattened nested data for easy analysis. Modified field names for disambiguation purposes.
+
+    * :code:`domain` : String
+        The test domain being queried.
+    * :code:`domain_is_control` : Boolean
+        Equals true if the queried domain is for the liveness test.
+    * :code:`date` : String
+            The date of the measurement.
+    * :code:`start_time` : String
+            The start time of the measurement.
+    * :code:`end_time` : String
+            The end time of the measurement.
+    * :code:`server_ip` : String
+        The IP address of the vantage point.
+    * :code:`server_netblock` : String
+        The netblock the vantage point belongs to.
+    * :code:`server_asn` : String
+        The AS number of the AS the vantage point resides in.
+    * :code:`server__as_name` : String
+        The name of the AS the vantage point resides in.
+    * :code:`server__as_full_name` : String
+        The full name of the AS the vantage point resides in.
+    * :code:`server__as_class` : String
+        The class of the AS the vantage point resides in.
+    * :code:`server_country` : String
+        The country the vantage point resides in.
+    * :code:`server_organization` : String
+        The IP organization the vantage point resides in.
+    * :code:`source` : String
+        Tar file name of the measurement.
+    * :code:`received_error` : String
+        Flatten error messages from the received responses.
+    * :code:`received_status`: String
+        Flatten status code from the received responses.
+    * :code:`received_headers`: String
+        Parsed HTTPS page headers.
+    * :code:`received_body`: String
+        Parsed HTTPS page body.
+    * :code:`received_tls_version`: String
+        Parsed TLS version.
+    * :code:`received_tls_cipher_suite`: String
+        Parsed TLS cipher suite.
+    * :code:`received_tls_cert`: String
+        Parsed TLS certificate.
+    * :code:`received_tls_cert_common_name`: String
+        Parsed common name field from TLS certificate.
+    * :code:`received_tls_cert_alternative_names`: String
+        Parsed alternative name field from TLS certificate.
+    * :code:`received_tls_cert_issuer`: String
+        Parsed issuer field from TLS certificate.
+    * :code:`matches_template`: Boolean
+        Equals true if the response given by the vantage point matches the known template.
+    * :code:`no_response_in_measurement_matches_template`: Boolean
+        Equals true if the responses from all the trials failed to match the known template.
+    * :code:`controls_failed`: Boolean
+        Set to :code:`true` when all control probes sent to the vantage point fail to match the known template. This implies that the mismatching responses are due to an error in the vantage point or the network, not censorship. Rows with :code:`controls_failed` set to :code:`true` should not be considered for analysis. 
+    * :code:`stateful_block` : Boolean
+        Equals true if another control probe sent immediately after our sensitive probes is blocked, but the second control measurement sent after 2 minutes was not.
+    
+
+**************************
+Hyperquack-v1 (deprecated)
+**************************
 
 .. image:: images/hyperquack-v1.png
   :width: 600
@@ -26,12 +97,12 @@ Quack-v1 and Hyperquack-v1 were operated from August 2018 to April 2021. Quack-v
 
 Hyperquack-v1 is built up from the Quack-v1 protocol to include support for the HTTP and HTTPS protocols. Before performing any tests, we send multiple HTTP get requests containing non-sensitive control URLs to each of the vantage points we are testing. If the responses to all of the requests are consistent, the responses are stripped of dynamic content such as cookies and turned into a template for the vantage point. Then when performing the tests with the sensitive keywords, we compare the vantage point’s response to its template.
 
-Our various `publications <https://censoredplanet.org/publications>`_ and `reports <https://censoredplanet.org/reports>`_ have used Quack-v1 and Hyperquack-v1 to detect many cases of application-layer interference. For instance, in our `recent investigation into the filtering of COVID-19 websites <https://censoredplanet.org/assets/covid.pdf`>_, Quack-v1 was used to detect censorship in unexpected places like Canada.
+Our various `publications <https://censoredplanet.org/publications>`_ and `reports <https://censoredplanet.org/reports>`_ have used Quack-v1 and Hyperquack-v1 to detect many cases of application-layer interference. For instance, in our `recent investigation into the filtering of COVID-19 websites <https://censoredplanet.org/assets/covid.pdf>`_ , Quack-v1 was used to detect censorship in unexpected places like Canada.
 
 
-*************
-Hyperquack-v2
-*************
+**************************
+Hyperquack-v2 (deprecated)
+**************************
 
 Hyperquack-v2 is our new version of both the Quack and Hyperquack measurement techniques. We’ve restructured the system to work as a request-based measurement server rather than a single-use measurement program. A user will run the program on a machine that will act as a server, and then users can interact with the program using a JSON API. The implications of this restructure are as follows.
 
@@ -49,16 +120,17 @@ Below is a list of the other major changes we've made to Hyperquack-v2.
 
 * **Changes to Output Format** - In addition to the output from censorship trial, Hyperquack-v2 outputs the results of the previously mentioned ‘health checks’ from vantage points. This output is very similar to the trial output, with the change that if the ‘health check’ is passed, a template will be included. All responses from the vantage point will be compared to the template to detect interference. At the moment, the templates for the Echo and Discard protocols are pre-defined by the protocol, so only the HTTP and HTTPS protocols will have these dynamically-computed templates included.
 
-*************
+
+*****
 Notes
-*************
+*****
 While Hyperquack-v2 includes multiple trials intended to avoid random network errors, there is still a 
 possibility that certain measurements are marked as anomalies incorrectly. To confirm censorship, it is
-recommended that the raw responses are compared to known blockpage fingerprints. The blockpage fingerprints
+critical that the raw responses are compared to known blockpage fingerprints. The blockpage fingerprints
 currently recorded by Censored Planet are available `here <https://assets.censoredplanet.org/blockpage_signatures.json>`_.
 Moreover, network errors (such as TCP handshake and Setup errors) must be filtered out to avoid false inferences. 
-Please refer to our sample `analysis scripts <https://github.com/censoredplanet/censoredplanet>`_ for a guide on processing 
-the data. 
+Please use our `analysis pipeline <https://github.com/censoredplanet/censoredplanet-analysis>`_ 
+to process the data before using it.
 
 Censored Planet detects network interference of websites using remote measurements to infrastructural vantage points 
 within networks (eg. institutions). Note that this raw data cannot determine the entity responsible for the blocking 
